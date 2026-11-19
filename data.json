@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-19T06:14:47.608021+00:00",
- "generated_at_wib": "19 Nov 2026, 13:14 WIB",
+ "generated_at": "2026-11-19T06:22:51.833235+00:00",
+ "generated_at_wib": "19 Nov 2026, 13:22 WIB",
  "items": [
   {
    "brand": "Sea Bank",
@@ -534,6 +534,35 @@
    "hashtags": [
     "#AlloBank"
    ],
+   "id": "m40a46a38f45e",
+   "keywords": [
+    "allo bank",
+    "bersih",
+    "turun",
+    "hingga"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPV2xpN0ZYZkl6a3hiWXZXRmUwT1Y4RGZzSlBWdFJkU3BNYUw0bnJlenR6X19pcG1Lb1E4R2hEVGpoNnpJQjYwR0NaN0xXNmNSajdWMGpoUERsU2F5UkNVbGF2X1dGazVLQmZUVU11ZGdzVFhSbnJidUtPN0dYLWlod0ZfdDVaeVF1WFh4Q0dYUHbSAYoBQVVfeXFMTWNvUDgxdDdkaVZrZWVFZjlIRHg3ZmM3NzNZenBSN1RLc2V6M09LS2NQQ2xOX09jdl9STjZpcWRBaVFVbVBNU3E4OHNMd212NjB1X3dkcjJrRDdrM05BVlVNVjI4eTdLdzBfWmhQVWpsOHZwZVYweVlza09NSmxMX0hBZl9XNEZqMUtR?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Negative",
+   "sentimentWeight": 1,
+   "source": "kontan.co.id",
+   "statement": "Laba Bersih Allo Bank Turun 11% hingga September 2026 kontan.co.id",
+   "title": "Laba Bersih Allo Bank Turun 11% hingga September 2026 - kontan.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-30",
+   "emotion": "Sadness",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
    "id": "ma527e78612c7",
    "keywords": [
     "allo bank",
@@ -638,6 +667,35 @@
    "source": "detikFinance",
    "statement": "Bank Artha Graha Internasional Resmi Jadi Strategic Partner WCCE 2026 detikFinance",
    "title": "Bank Artha Graha Internasional Resmi Jadi Strategic Partner WCCE 2026 - detikFinance",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-22",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m7f1df645bdf9",
+   "keywords": [
+    "allo bank",
+    "bidik",
+    "hingga",
+    "akhir"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOaDlIckxpaTVVSUlPUnhTX3U5UElwMzZQQ096clo2T3Mzd2tRd2Z5NThITHYyNC1LZnRLb3lzX2NwRDJRRi1Wa2djQzlQV3RBclBkWDVRcUFQVmFhVXo2THY0V2lacVRzTy1VRjZnb2IwalZFSEY4d2VsZWpBRTczTWxfYTBiOUxhVW15OUNEcnVMczRvekg0MWtZRHZkTGphSGdDWVVTZjRtSHVa0gGmAUFVX3lxTFBvVEJLS1NUS0dTd3d4Y2tQNzhkajdXcjhlV3R6Z0pwcUtieDFhUDc5dEJBeHo4WE82TG1FejVQU2Uxd3dPZ3lmQ09tWU9pN2ZWNlN1ZnUwRkZodVlxcUZMX2Z4c1p0UHJWNTM2SVRqTDEybVdzV2hLS08xdFRSMXdndmxNOTJyQU4tRWRoTlJGaUJzNHdOajBEb1hRVjhLOEowUGhLc3c?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "kontan.co.id",
+   "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit kontan.co.id",
+   "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - kontan.co.id",
    "topic": "Bank Artha Graha Internasional"
   }
  ]
