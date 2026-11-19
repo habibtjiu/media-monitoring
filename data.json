@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-19T04:52:37.958814+00:00",
- "generated_at_wib": "19 Nov 2026, 11:52 WIB",
+ "generated_at": "2026-11-19T06:14:47.608021+00:00",
+ "generated_at_wib": "19 Nov 2026, 13:14 WIB",
  "items": [
   {
    "brand": "Sea Bank",
@@ -351,6 +351,35 @@
    "topic": "Program Digital Banking"
   },
   {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-13",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m480ddfff452f",
+   "keywords": [
+    "allo bank",
+    "konglomerat",
+    "tertekan",
+    "biaya"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB1Rm5UWEIwRExFbGhVSHdpRzRveTgwUnJnVFYzOUU0RmItNk5ONU4tbmhsWWd0WTh3VG1Mbm5qMmtmQ3hiclhxNGRaYVpjMlFsQ1Y3UjVXNFZWeVZXVU96Q21saHQ0S3laZGUwdHd1aWY?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "SuaraGarut.ID",
+   "statement": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 SuaraGarut.ID",
+   "title": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 - SuaraGarut.ID",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
    "brand": "Artha Graha",
    "channel": "Media Online",
    "comparisonWeight": 1,
@@ -418,6 +447,35 @@
    "hashtags": [
     "#BankArthaGraha"
    ],
+   "id": "m313f26347c93",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "wujud"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0JSMFFoZXp4MmZydURtLU90VVlfRTFvbjNKMlcydkNPY3pDQS1QLTh3SVRYTWJCRG1CcGYxUEJlcGJvSUNOcjFjUmZZTW5iSWNPN3oyTi1sWkxXMXRodEF1aFZXX2JuQnJTeUx0VVhVbjBrZEhKeWRKdGZVWTV2SjFtMmZqTkNObk9uNmlhWGQwNG9L?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "indoposco.id",
+   "statement": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda indoposco.id",
+   "title": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda - indoposco.id",
+   "topic": "(CSSR) Artha Graha Peduli - BAGI"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-12",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
    "id": "m73e5a80defbe",
    "keywords": [
     "bank artha graha internasional",
@@ -465,35 +523,6 @@
    "statement": "Artha Graha Dukung Pasar Wiwitan SCBD, Hadirkan UMKM hingga Inovator Kampus Kompas.com",
    "title": "Artha Graha Dukung Pasar Wiwitan SCBD, Hadirkan UMKM hingga Inovator Kampus - Kompas.com",
    "topic": "The Local Market ID Pasar Wiwitan SCBD"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-10-30",
-   "emotion": "Sadness",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
-   "id": "m40a46a38f45e",
-   "keywords": [
-    "allo bank",
-    "bersih",
-    "turun",
-    "hingga"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPV2xpN0ZYZkl6a3hiWXZXRmUwT1Y4RGZzSlBWdFJkU3BNYUw0bnJlenR6X19pcG1Lb1E4R2hEVGpoNnpJQjYwR0NaN0xXNmNSajdWMGpoUERsU2F5UkNVbGF2X1dGazVLQmZUVU11ZGdzVFhSbnJidUtPN0dYLWlod0ZfdDVaeVF1WFh4Q0dYUHbSAYoBQVVfeXFMTWNvUDgxdDdkaVZrZWVFZjlIRHg3ZmM3NzNZenBSN1RLc2V6M09LS2NQQ2xOX09jdl9STjZpcWRBaVFVbVBNU3E4OHNMd212NjB1X3dkcjJrRDdrM05BVlVNVjI4eTdLdzBfWmhQVWpsOHZwZVYweVlza09NSmxMX0hBZl9XNEZqMUtR?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Negative",
-   "sentimentWeight": 1,
-   "source": "kontan.co.id",
-   "statement": "Laba Bersih Allo Bank Turun 11% hingga September 2026 kontan.co.id",
-   "title": "Laba Bersih Allo Bank Turun 11% hingga September 2026 - kontan.co.id",
-   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Allo Bank",
@@ -609,35 +638,6 @@
    "source": "detikFinance",
    "statement": "Bank Artha Graha Internasional Resmi Jadi Strategic Partner WCCE 2026 detikFinance",
    "title": "Bank Artha Graha Internasional Resmi Jadi Strategic Partner WCCE 2026 - detikFinance",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-10-22",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
-   "id": "m7f1df645bdf9",
-   "keywords": [
-    "allo bank",
-    "bidik",
-    "hingga",
-    "akhir"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOaDlIckxpaTVVSUlPUnhTX3U5UElwMzZQQ096clo2T3Mzd2tRd2Z5NThITHYyNC1LZnRLb3lzX2NwRDJRRi1Wa2djQzlQV3RBclBkWDVRcUFQVmFhVXo2THY0V2lacVRzTy1VRjZnb2IwalZFSEY4d2VsZWpBRTczTWxfYTBiOUxhVW15OUNEcnVMczRvekg0MWtZRHZkTGphSGdDWVVTZjRtSHVa0gGmAUFVX3lxTFBvVEJLS1NUS0dTd3d4Y2tQNzhkajdXcjhlV3R6Z0pwcUtieDFhUDc5dEJBeHo4WE82TG1FejVQU2Uxd3dPZ3lmQ09tWU9pN2ZWNlN1ZnUwRkZodVlxcUZMX2Z4c1p0UHJWNTM2SVRqTDEybVdzV2hLS08xdFRSMXdndmxNOTJyQU4tRWRoTlJGaUJzNHdOajBEb1hRVjhLOEowUGhLc3c?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "kontan.co.id",
-   "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit kontan.co.id",
-   "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - kontan.co.id",
    "topic": "Bank Artha Graha Internasional"
   }
  ]
