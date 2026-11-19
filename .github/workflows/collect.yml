@@ -1,1 +1,23 @@
-# placeholder
+name: Kumpulkan mention live
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Kumpulkan RSS
+        run: python3 collector/collect.py data.json
+      - name: Commit kalau ada mention baru
+        run: |
+          git config user.name "media-monitoring-bot"
+          git config user.email "media-monitoring-bot@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || git commit -m "chore: perbarui mention live" && git push
