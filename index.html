@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Monitoring · Dashboard</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --surface: #fff;
+  --surface-soft: #f8faff;
+  --text: #18243a;
+  --muted: #66758d;
+  --subtle: #7887a0;
+  --border: #e3e9f3;
+  --track: #edf1f8;
+  --blue: #3463e8;
+  --blue-soft: #eaf0ff;
+  --teal: #087e70;
+  --pink: #b94460;
+  --shadow: 0 2px 8px #20356606;
+  --rail-size: 79px;
+  --side-size: 246px;
+  --header-size: 64px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+}
+:root.dark {
+  color-scheme: dark;
+  --bg: #111927;
+  --surface: #182235;
+  --surface-soft: #1d2a40;
+  --text: #edf3ff;
+  --muted: #a5b3ca;
+  --subtle: #9caac3;
+  --border: #2a3952;
+  --track: #2b3950;
+  --blue: #91abff;
+  --blue-soft: #25375e;
+  --teal: #64dccb;
+  --pink: #ff9fb4;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--text); background: var(--bg); }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+button:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(24px, 2.5vw, 34px); letter-spacing: -.042em; line-height: 1.16; }
+h2 { font-size: 15px; letter-spacing: -.015em; }
+p { line-height: 1.55; }
+.icon { width: 18px; height: 18px; flex: 0 0 auto; display: inline-block; vertical-align: middle; }
+.logo { width: 38px; height: 38px; display: block; flex: 0 0 auto; }
+.row { display: flex; align-items: center; gap: 8px; }
+.grow { flex: 1; }
+.muted, .range { color: var(--muted); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.btn, .icon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 35px; padding: 6px 11px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--muted); white-space: nowrap; font-weight: 600; font-size: 12px; }
+.icon-btn { width: 35px; padding: 0; }
+.btn:hover, .icon-btn:hover, .btn.selected, .icon-btn.selected { color: var(--blue); background: var(--blue-soft); }
+.btn.primary { border-color: #3463e8; background: #3463e8; color: #fff; }
+.btn.primary:hover { background: #2451cf; }
+.btn.danger { color: var(--pink); }
+input, textarea, select { width: 100%; min-width: 0; color: var(--text); border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: 9px 11px; }
+input::placeholder, textarea::placeholder { color: var(--subtle); }
+.search-input, .select-wrap { position: relative; display: inline-flex; align-items: center; min-width: 0; color: var(--subtle); }
+.search-input .icon, .select-wrap .icon { position: absolute; left: 10px; width: 15px; height: 15px; pointer-events: none; }
+.search-input input { padding-left: 32px; }
+.search-input input, .select-wrap select { min-height: 35px; font-size: 12px; }
+.select-wrap select { width: auto; padding: 7px 29px 7px 10px; appearance: none; color: var(--muted); font-weight: 550; cursor: pointer; }
+.select-wrap .icon + select { padding-left: 30px; }
+.select-wrap::after { content: ""; position: absolute; right: 12px; width: 5px; height: 5px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg) translateY(-2px); pointer-events: none; }
+
+.rail { position: fixed; inset: 0 auto 0 0; z-index: 5; width: var(--rail-size); display: flex; flex-direction: column; align-items: stretch; border-right: 1px solid var(--border); background: var(--surface); }
+.brand-mark { display: flex; align-items: center; justify-content: center; height: var(--header-size); border-bottom: 1px solid var(--border); }
+.rail-nav { display: grid; gap: 7px; padding: 17px 6px; }
+.rail-link { min-height: 62px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 7px; font-size: 8.6px; font-weight: 750; text-transform: uppercase; letter-spacing: .025em; }
+.rail-link .icon { width: 21px; height: 21px; }
+.rail-link:hover, .rail-link.active { background: var(--blue-soft); color: var(--blue); }
+.workspace { margin-left: var(--rail-size); }
+.topbar { position: sticky; top: 0; z-index: 4; height: var(--header-size); background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 23px; }
+.topbar-title { font-size: 15px; font-weight: 700; gap: 10px; }
+.topbar .icon-btn, .topbar .flag { border-color: transparent; }
+.topbar .title-edit { width: 25px; }
+.title-edit .icon { width: 14px; height: 14px; }
+.top-actions { gap: 7px; }
+.topbar .flag { font-size: 17px; padding: 5px 6px; }
+.topbar .avatar { border-radius: 50%; background: var(--blue-soft); color: var(--blue); }
+.with-dot { position: relative; }
+.with-dot::after { content: ""; position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: #ef5e72; box-shadow: 0 0 0 2px var(--surface); }
+.workspace-body { display: flex; align-items: flex-start; }
+.sidebar { position: sticky; top: var(--header-size); flex: 0 0 var(--side-size); height: calc(100dvh - var(--header-size)); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; min-width: 0; }
+.sidebar-intro { padding: 19px 15px 12px; }
+.sidebar-title { display: flex; align-items: center; gap: 9px; margin-bottom: 15px; }
+.sidebar-title h2 { font-size: 18px; }
+.sidebar-symbol { padding: 7px; background: var(--blue-soft); color: var(--blue); border-radius: 9px; }
+.sidebar-intro .search-input { width: 100%; }
+.sidebar-intro .search-input input { background: var(--surface-soft); }
+.sidebar-scroll { overflow: auto; flex: 1; padding: 0 10px 10px; scrollbar-width: thin; }
+.side-folder { margin: 4px 0; }
+.side-folder.current { background: var(--surface-soft); border-radius: 9px; }
+.folder-btn { display: grid; grid-template-columns: 16px minmax(0, 1fr) 12px; width: 100%; align-items: center; gap: 8px; color: var(--muted); background: transparent; border: 0; border-radius: 9px; text-align: left; padding: 9px 7px; font-size: 11.5px; line-height: 1.36; font-weight: 620; }
+.folder-btn:hover, .side-folder.current .folder-btn { color: var(--blue); }
+.folder-btn .icon { width: 15px; height: 15px; }
+.folder-btn .icon:last-child { width: 12px; height: 12px; }
+.subnav { display: grid; gap: 1px; margin: 0 7px 0 15px; padding: 2px 0 7px 7px; border-left: 1px solid var(--border); }
+.subnav a { display: block; padding: 6px 8px; border-radius: 7px; color: var(--muted); font-size: 11.8px; font-weight: 520; }
+.subnav a:hover, .subnav a.active { background: var(--blue-soft); color: var(--blue); }
+.subnav a.active { font-weight: 700; }
+.extraction-row { display: flex; align-items: center; }
+.extraction-row a { flex: 1; }
+.extraction-row .icon-btn { width: 25px; min-height: 24px; border: 0; background: transparent; }
+.extraction-row .icon { width: 13px; height: 13px; }
+.extraction-sub { margin-left: 10px; }
+.sidebar-bottom { padding: 12px; border-top: 1px solid var(--border); }
+.sidebar-bottom .btn { width: 100%; justify-content: flex-start; background: var(--surface-soft); }
+.side-empty { color: var(--muted); font-size: 12px; padding: 10px; }
+
+.main-content { flex: 1; min-width: 0; max-width: 1750px; margin: 0 auto; padding: 23px clamp(17px, 2vw, 31px) 0; }
+.page-heading { margin-bottom: 20px; }
+.breadcrumb { font-size: 11px; font-weight: 650; color: var(--blue); margin-bottom: 9px; }
+.breadcrumb span { margin: 0 4px; color: var(--subtle); }
+.page-heading p { color: var(--muted); margin-top: 6px; font-size: 12px; }
+footer { color: var(--subtle); font-size: 11px; padding: 10px 0 19px; text-align: center; }
+.stat-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 12px; margin-bottom: 17px; }
+.stat, .panel { border: 1px solid var(--border); border-radius: 13px; background: var(--surface); box-shadow: var(--shadow); min-width: 0; }
+.stat { padding: 12px; }
+.stat-top { display: flex; align-items: center; justify-content: space-between; gap: 2px; color: var(--muted); font-size: 11px; font-weight: 650; min-height: 28px; }
+.stat-icon { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: 8px; }
+.stat-icon .icon { width: 16px; height: 16px; }
+.stat-icon.blue { color: #3865e9; background: #eaf0ff; }
+.stat-icon.teal { color: #108a7a; background: #e0f8f2; }
+.stat-icon.slate { color: #657792; background: #edf1f7; }
+.stat-icon.pink { color: #d55271; background: #fff0f3; }
+.stat-icon.violet { color: #7957d8; background: #f0ebff; }
+.stat-icon.green { color: #238853; background: #e6f7ec; }
+.stat > strong { display: block; margin: 4px 0 2px; font-size: clamp(20px,2vw,29px); letter-spacing: -.055em; white-space: nowrap; }
+.stat small { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.toolbar { display: flex; align-items: center; gap: 8px; justify-content: space-between; flex-wrap: wrap; margin-bottom: 15px; }
+.toolbar .row { flex-wrap: wrap; }
+.overview-tools .search-input { width: clamp(140px,18vw,230px); }
+.range { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 550; }
+.range .icon { width: 14px; height: 14px; }
+.panel { padding: 15px 16px; margin-bottom: 15px; }
+.panel-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-bottom: 12px; min-height: 20px; }
+.panel-head .row { flex-wrap: wrap; justify-content: flex-end; }
+.panel-total { display: flex; align-items: baseline; gap: 7px; margin: 4px 0 10px; color: var(--muted); font-size: 11px; }
+.panel-total strong { color: var(--text); font-size: 25px; letter-spacing: -.05em; }
+.double, .triple, .voice-grid { display: grid; align-items: stretch; gap: 14px; }
+.double { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.triple, .voice-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.comparison-grid { grid-template-columns: minmax(0,1.75fr) minmax(0,1fr); }
+.movement-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 9px; align-items: center; color: var(--muted); font-size: 11px; margin: 0 0 10px; }
+.tabs, .icon-segment { display: flex; align-items: center; gap: 3px; flex-wrap: wrap; }
+.tabs .btn { font-size: 11px; }
+.segment, .icon-segment { background: var(--surface-soft); padding: 2px; border: 1px solid var(--border); border-radius: 9px; }
+.segment .btn, .icon-segment .icon-btn { min-height: 28px; border: 0; background: transparent; border-radius: 6px; }
+.icon-segment .icon-btn { width: 29px; }
+.icon-segment .icon { width: 15px; height: 15px; }
+.segment .btn.selected, .icon-segment .icon-btn.selected { background: var(--blue-soft); color: var(--blue); }
+.dot { width: 8px; height: 8px; display: inline-block; flex: 0 0 auto; background: var(--dot); border-radius: 50%; }
+.legend { display: flex; gap: 7px 12px; flex-wrap: wrap; font-size: 10px; color: var(--muted); align-items: center; }
+.legend span, .stack-values span { display: inline-flex; align-items: center; gap: 5px; }
+.chart-scroll { width: 100%; overflow: auto; }
+.chart { width: 100%; height: auto; display: block; aspect-ratio: var(--chart-ratio); overflow: visible; }
+.chart line { stroke: var(--border); stroke-dasharray: 4 4; }
+.chart text { fill: var(--subtle); font-family: inherit; font-size: 11px; }
+.chart-point { cursor: crosshair; }
+.chart-point:hover { fill: var(--blue-soft); r: 6; }
+.movement .chart { min-height: 178px; max-height: 270px; }
+.engagement-panel .chart { min-height: 80px; }
+.engagement-panel .chart text { font-size: 10px; }
+.donut-block { display: flex; align-items: center; gap: 14px; justify-content: center; min-height: 125px; }
+.donut { border-radius: 50%; flex: 0 0 clamp(78px,8.4vw,122px); aspect-ratio: 1; display: grid; place-items: center; background: var(--ring); }
+.donut > div { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 72%; height: 72%; border-radius: 50%; background: var(--surface); }
+.donut strong { font-size: clamp(15px,1.5vw,23px); letter-spacing: -.05em; }
+.donut span { color: var(--muted); font-size: 9px; }
+.detailed-legend { min-width: 0; flex: 1; display: grid; gap: 9px; font-size: 11px; }
+.detailed-legend > div { display: flex; align-items: center; gap: 6px; }
+.detailed-legend span { flex: 1; color: var(--muted); overflow-wrap: anywhere; }
+.detailed-legend strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bars { display: grid; gap: 11px; margin: 13px 0 4px; }
+.bar-row { display: grid; grid-template-columns: minmax(75px, auto) 1fr auto; align-items: center; gap: 7px; font-size: 11px; }
+.bar-row > span { color: var(--muted); overflow-wrap: anywhere; }
+.bar-row > div { background: var(--track); border-radius: 99px; height: 7px; min-width: 20px; }
+.bar-row i { display: block; height: 100%; border-radius: inherit; }
+.ranking { list-style: none; margin: 8px 0 0; padding: 0; }
+.ranking li { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+.ranking li:last-child { border-bottom: 0; }
+.rank { background: var(--blue-soft); color: var(--blue); font-size: 10px; text-align: center; border-radius: 6px; padding: 4px; }
+.chips { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 7px; }
+.chip { background: var(--surface-soft); border: 1px solid var(--border); color: var(--muted); padding: 5px 8px; border-radius: 7px; font-size: 11px; }
+.chip:hover, .chip.selected { color: var(--blue); background: var(--blue-soft); }
+.chip b { margin-left: 7px; color: var(--blue); }
+
+.insight { color: var(--blue); font-size: 21px; font-weight: 750; }
+.section-note { margin: 0 0 10px; font-size: 12px; }
+.empty { display: grid; place-items: center; gap: 6px; min-height: 105px; color: var(--muted); font-size: 12px; text-align: center; }
+.empty .icon { width: 26px; height: 26px; opacity: .75; }
+.badge { display: inline-flex; align-items: center; min-height: 21px; border-radius: 20px; padding: 3px 8px; background: var(--blue-soft); color: var(--blue); font-size: 10px; font-weight: 650; }
+.badge.positive { background: #dff8f1; color: #087a65; }
+.badge.neutral { background: var(--track); color: var(--muted); }
+.badge.negative { background: #ffe9ee; color: #b7435b; }
+.badge.moderate { background: #fff0d9; color: #9b5611; }
+.search-hero { text-align: center; padding: 30px 20px; }
+.search-art { width: 130px; height: 120px; margin: 0 auto 10px; position: relative; border-radius: 50%; background: radial-gradient(circle, var(--blue-soft) 0 55%, transparent 56%); }
+.search-sheet { position: absolute; left: 33px; top: 19px; width: 52px; height: 69px; border: 2px solid #8fa9f4; border-radius: 8px; padding: 14px 9px; transform: rotate(-12deg); background: var(--surface); box-shadow: 0 8px 18px #4675ed22; }
+.search-sheet i { display: block; width: 92%; height: 4px; background: #b4c6fc; border-radius: 3px; margin-bottom: 7px; }
+.search-sheet i:nth-child(2) { width: 75%; }
+.search-glass { position: absolute; left: 65px; top: 48px; display: grid; place-items: center; width: 45px; height: 45px; background: #3463e8; color: white; border-radius: 13px; box-shadow: 0 8px 15px #3463e84d; transform: rotate(10deg); }
+.search-glass .icon { width: 26px; height: 26px; }
+.search-spark { position: absolute; right: 11px; top: 18px; color: #9272eb; font-size: 18px; }
+.search-form { width: min(650px,100%); margin: 20px auto 0; border: 1px solid var(--border); background: var(--surface-soft); border-radius: 12px; padding: 10px; }
+.search-form textarea { border: 0; background: transparent; display: block; resize: vertical; min-height: 68px; }
+.search-form .form-actions { justify-content: space-between; margin-top: 3px; font-size: 11px; color: var(--muted); padding-left: 10px; }
+.saved-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.saved-list a, .product-card { display: flex; align-items: center; gap: 9px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); font-size: 12px; color: var(--text); }
+.saved-list a:hover, .product-card:hover { color: var(--blue); border-color: var(--blue); }
+.saved-list a span { flex: 1; }
+.saved-list a .icon:first-child { color: var(--blue); }
+.article { display: flex; align-items: flex-start; gap: 11px; padding: 12px 2px; border-top: 1px solid var(--border); }
+.article-symbol { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; color: var(--blue); background: var(--blue-soft); border-radius: 8px; }
+.article-content { flex: 1; min-width: 0; }
+.article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; color: var(--muted); font-size: 11px; }
+.article-meta .icon { width: 12px; height: 12px; }
+.article-title { display: block; border: 0; background: none; color: var(--text); padding: 5px 0 7px; text-align: left; font-weight: 650; line-height: 1.35; }
+.article-title:hover { color: var(--blue); }
+.marked { color: var(--blue); background: var(--blue-soft); }
+.marked .icon { fill: currentColor; fill-opacity: .19; }
+.timeline-date { display: flex; align-items: center; gap: 8px; background: var(--surface-soft); padding: 9px; color: var(--blue); font-size: 12px; margin-top: 8px; }
+.pagination { display: flex; align-items: center; justify-content: flex-end; gap: 9px; color: var(--muted); font-size: 11px; margin-top: 12px; }
+.pagination .icon-btn { width: 28px; min-height: 28px; font-size: 17px; }
+.stack-list { display: grid; gap: 13px; margin: 15px 0 5px; }
+.stack-row { display: grid; gap: 6px; font-size: 11px; }
+.stack-track { display: flex; min-height: 19px; border-radius: 5px; overflow: hidden; background: var(--track); }
+.stack-track span { min-width: 1px; line-height: 19px; display: block; font-size: 9px; font-weight: 700; text-align: center; color: #14243a; overflow: hidden; white-space: nowrap; }
+.stack-values { display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 10px; }
+.region-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 12px; color: var(--muted); font-size: 11px; }
+.region-footer .pagination { margin: 0; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; text-align: left; }
+th, td { padding: 11px 9px; border-bottom: 1px solid var(--border); font-size: 11px; }
+th { white-space: nowrap; background: var(--surface-soft); color: var(--muted); font-weight: 750; letter-spacing: .025em; }
+tbody tr:hover { background-color: var(--surface-soft); }
+.crisis-meta { font-size: 12px; margin: 0 0 8px; color: var(--muted); }
+.crisis-tools { justify-content: flex-start; }
+.crisis-panel td { min-width: 60px; }
+.crisis-panel td:nth-child(2) { font-weight: 650; min-width: 118px; }
+.crisis-panel td:nth-child(3), .crisis-panel td:nth-child(7) { min-width: 102px; }
+.crisis-panel td .badge { white-space: nowrap; }
+.crisis-panel td:first-child { min-width: auto; }
+.crisis-actions { gap: 4px; }
+.crisis-actions .icon-btn { width: 26px; min-height: 26px; }
+.crisis-actions .icon { width: 13px; height: 13px; }
+
+.overlay-open { overflow: hidden; }
+.overlay-backdrop { position: fixed; inset: 0; z-index: 10; background: #131f4064; }
+.modal, .drawer { position: fixed; z-index: 11; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 18px 60px #14244936; display: flex; flex-direction: column; outline: none; }
+.modal { top: 50%; left: 50%; transform: translate(-50%,-50%); width: min(515px,calc(100vw - 30px)); max-height: 90dvh; border-radius: 15px; }
+.drawer { inset: 0 0 0 auto; width: min(460px,100%); animation: slide-in .2s ease-out; }
+@keyframes slide-in { from { transform: translateX(100%); } }
+.modal > header, .drawer > header { border-bottom: 1px solid var(--border); padding: 14px 17px; display: flex; justify-content: space-between; align-items: center; gap: 7px; }
+.modal > header h2, .drawer > header h2 { font-size: 18px; overflow-wrap: anywhere; }
+.overlay-content { padding: 16px; overflow: auto; }
+.drawer .overlay-content { flex: 1; display: flex; flex-direction: column; }
+.drawer-bottom { margin-top: auto; padding-top: 16px; }
+.drawer-bottom .btn { width: 100%; justify-content: flex-start; }
+.stack-form, .login-card form { display: grid; gap: 13px; }
+.stack-form > button { justify-self: start; }
+.stack-form label:not(.select-wrap), .login-card label { display: grid; gap: 5px; font-size: 12px; color: var(--muted); font-weight: 650; }
+.form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.manage-list { display: grid; margin: 12px 0; }
+.manage-list > div { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.manage-list > div > span { overflow-wrap: anywhere; }
+.manage-list .icon-btn { width: 29px; min-height: 29px; }
+.manage-list .icon { width: 14px; height: 14px; }
+.detail { display: grid; gap: 10px; }
+.detail dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 15px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; }
+.detail .btn { justify-self: start; }
+.product-card { width: 100%; text-align: left; }
+.product-card strong { flex: 1; }
+.account-menu { display: grid; margin-bottom: 10px; }
+.account-menu button { background: transparent; color: var(--text); border: 0; border-bottom: 1px solid var(--border); text-align: left; display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 10px 0; }
+.account-menu button:hover { color: var(--blue); }
+.account-menu button span { color: var(--muted); font-size: 11px; grid-column: 1; }
+.account-menu .icon { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+#toast { position: fixed; z-index: 20; right: 18px; bottom: 18px; border-radius: 9px; padding: 10px 14px; background: #172746; color: #fff; box-shadow: 0 5px 20px #0002; opacity: 0; pointer-events: none; transform: translateY(6px); transition: .16s ease; font-size: 12px; }
+#toast.visible { opacity: 1; transform: none; }
+
+.login-shell { min-height: 100dvh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 30px; gap: 30px; }
+.login-card { width: min(100%,385px); margin: auto; padding: 25px 8px; }
+.brand-lockup { display: flex; align-items: center; gap: 8px; margin-bottom: 33px; font-size: 15px; }
+.login-card p { margin-top: 9px; font-size: 13px; }
+.login-card form { margin-top: 24px; }
+.login-card input { min-height: 43px; }
+.login-card .btn { margin-top: 4px; min-height: 43px; }
+.login-card footer { text-align: left; margin-top: 10px; }
+.login-visual { min-height: calc(100dvh - 60px); border-radius: 24px; background: radial-gradient(ellipse at 65% 18%,#537afd,transparent 62%), linear-gradient(145deg,#203a96,#142351); color: #fff; display: grid; place-items: center; align-content: center; gap: 30px; text-align: center; padding: 20px; overflow: hidden; }
+.login-visual h2 { font-size: clamp(23px,4vw,43px); letter-spacing: -.045em; }
+.login-visual p { color: #dbe6ff; margin-top: 8px; }
+.login-radar { width: min(260px,70vw); aspect-ratio: 1; border-radius: 50%; position: relative; display: grid; place-items: center; background: radial-gradient(ellipse,#c3d4ff36,transparent 66%); }
+.login-radar i { position: absolute; inset: 0; border-radius: 50%; border: 1px solid #cedbff61; }
+.login-radar i:nth-child(2) { inset: 11%; }
+.login-radar i:nth-child(3) { inset: 22%; }
+.login-radar i:nth-child(4) { inset: 33%; }
+.login-radar .icon { width: 37%; height: 37%; border-radius: 22%; background: #ffffff24; border: 1px solid #ffffff5e; padding: 6%; }
+
+@media (max-width: 1220px) {
+  :root { --side-size: 213px; }
+  .stat-grid { gap: 8px; }
+  .stat { padding: 9px; }
+  .donut-block { gap: 7px; }
+}
+@media (max-width: 1030px) {
+  .stat-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .triple, .voice-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .donut { flex-basis: clamp(75px,11vw,110px); }
+  .comparison-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 800px) {
+  :root { --rail-size: 61px; --side-size: 190px; }
+  .rail-link { font-size: 7px; }
+  .rail-link .icon { width: 18px; height: 18px; }
+  .topbar { padding: 0 10px; }
+  .top-actions { gap: 2px; }
+  .with-sidebar .double, .with-sidebar .triple, .with-sidebar .voice-grid { grid-template-columns: 1fr; }
+  .movement .chart { min-width: 495px; }
+}
+@media (max-width: 600px) {
+  :root { --rail-size: 48px; --header-size: 54px; }
+  .rail-nav { padding: 9px 2px; }
+  .rail-link { height: 53px; min-height: 0; font-size: 6px; letter-spacing: 0; }
+  .brand-mark .logo { width: 31px; height: 31px; }
+  .workspace-body { display: block; }
+  .sidebar { position: static; width: 100%; height: auto; max-height: 285px; border-bottom: 1px solid var(--border); }
+  .sidebar-intro { padding: 8px 10px; }
+  .sidebar-title { margin-bottom: 4px; }
+  .sidebar-title h2 { font-size: 14px; }
+  .sidebar-symbol { padding: 3px; }
+  .sidebar-symbol .icon { width: 14px; height: 14px; }
+  .sidebar-bottom { padding: 5px 10px; }
+  .sidebar-bottom .btn { min-height: 27px; }
+  .topbar { padding: 0 5px; }
+  .topbar-title { gap: 2px; font-size: 12px; }
+  .topbar .icon-btn { width: 26px; min-height: 28px; }
+  .topbar button .icon { width: 15px; height: 15px; }
+  .topbar .flag { min-height: 28px; padding: 2px; font-size: 13px; }
+  .top-actions { gap: 0; }
+  .main-content { padding: 14px 9px 0; }
+  .stat-grid, .double, .triple, .voice-grid, .saved-list { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .panel { padding: 11px; }
+  .panel-head { align-items: flex-start; }
+  .movement .panel-head { flex-wrap: wrap; }
+  .login-shell { grid-template-columns: 1fr; padding: 23px; }
+  .login-visual { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="overlay"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const brands = ['Sea Bank', 'Allo Bank', 'Bank Saqu', 'Artha Graha', 'IBK Bank'];
+const primary = 'Bank Artha Graha Internasional';
+const savedDefaults = [
+  primary, 'The Local Market ID Pasar Wiwitan SCBD', 'Program Digital Banking',
+  'Edukasi dan Literasi keuangan Bank Artha Graha Internasional', 'Fraud & Scam',
+  '(CSSR) Artha Graha Peduli - BAGI'
+];
+const sentiments = ['Positive', 'Neutral', 'Negative'];
+const emotions = ['Trust', 'Anticipation', 'Disgust', 'Joy', 'Surprise', 'Anger', 'Sadness', 'Fear'];
+const regions = ['DKI Jakarta', 'Jawa Barat', 'Banten', 'Bali', 'Jawa Timur', 'Jawa Tengah', 'Sumatera Utara', 'DI Yogyakarta', 'Sulawesi Selatan', 'Lampung'];
+const sources = ['Media Online', 'Instagram', 'X', 'Facebook'];
+const outlets = ['Bisnis Indonesia', 'Kontan', 'Media Indonesia', 'Republika', 'Antara', 'Tempo', 'Kompas', 'Investor Daily'];
+const people = ['Jefri R. Sirait', 'Andi Buchari', 'Benny', 'Kartika Wirjoatmodjo', 'I Gusti Ayu', 'Dewi Lestari', 'Rizky Pratama', 'Nadia Putri', 'Taufik Hidayat', 'Wulan Sari', 'Dian Permata', 'Arif Setiawan', 'Maya Rahma', 'Bagus Saputra', 'Fajar Nugroho', 'Rina Utami', 'Dimas Prakoso', 'Sinta Dewi', 'Putri Wibowo', 'Agus Santoso'];
+const storylines = [
+  ['Pasar Wiwitan SCBD', 'UMKM lokal tampil di Pasar Wiwitan SCBD', '#PasarWiwitan'],
+  ['digital banking', 'Perluasan layanan digital untuk nasabah ritel', '#DigitalBanking'],
+  ['literasi keuangan', 'Edukasi pengelolaan keuangan bersama komunitas', '#LiterasiKeuangan'],
+  ['fraud & scam', 'Imbauan waspada terhadap penipuan yang mengatasnamakan bank', '#WaspadaScam'],
+  ['artha graha peduli', 'Relawan Artha Graha Peduli mendukung kegiatan sosial', '#ArthaGrahaPeduli'],
+  ['perbankan', 'Perkembangan layanan dan kinerja perbankan nasional', '#Perbankan']
+];
+const comparisonBaseline = [
+  [9208, [14.39, 67.29, 18.32]],
+  [2668, [19.64, 67.17, 13.19]],
+  [2117, [35.14, 47.90, 16.96]],
+  [522, [71.65, 13.22, 15.13]],
+  [299, [4.68, 94.98, 0.33]]
+];
+const data = [];
+function addItem(brand, index, iso, sentiment, engagement) {
+  const isPrimary = brand === 'Artha Graha';
+  const name = isPrimary ? primary : brand;
+  const story = storylines[index % storylines.length];
+  const person = isPrimary ? people[index < 16 ? 0 : index < 29 ? 1 : index < 37 ? 2 : index < 43 ? 3 : index < 48 ? 4 : 5 + index % (people.length - 5)] : ['Aditya Putra', 'Ratna Sari', 'Bayu Pradana'][index % 3];
+  const channel = sources[(index + Math.floor(index / 6)) % sources.length];
+  const region = regions[(index * 7 + Math.floor(index / 10)) % regions.length];
+  const keywords = isPrimary
+    ? [primary.toLowerCase(), ...(index < 55 ? ['bank artha graha', 'artha graha'] : []), ...(index < 6 ? ['agi'] : []), story[0].toLowerCase()]
+    : [brand.toLowerCase(), story[0].toLowerCase(), 'perbankan digital'];
+  const variants = ['Sorotan', 'Kabar terbaru', 'Liputan daerah', 'Agenda komunitas', 'Catatan redaksi', 'Update nasabah', 'Fokus pekan ini', 'Rangkuman'];
+  data.push({
+    id: data.length + 1, date: iso, brand, language: 'Indonesia', channel,
+    source: channel === 'Media Online' ? outlets[(index + Math.floor(index / 4)) % outlets.length] : channel,
+    title: name + ' — ' + story[1] + ' · ' + region + ' (' + variants[Math.floor(index / 6) % variants.length] + ')',
+    sentiment, emotion: emotions[(index * 3 + Math.floor(index / 5)) % emotions.length],
+    engagement, person, organization: index % 8 < 5 ? name : ['Otoritas Jasa Keuangan', 'Bank Indonesia', 'Asosiasi Fintech Indonesia'][index % 3],
+    keywords, hashtags: [story[2], isPrimary ? '#BankArthaGraha' : '#' + brand.replaceAll(' ', '')], region,
+    topic: savedDefaults[index % 6 + 1] || primary,
+    statement: person + ' menyoroti ' + story[0].toLowerCase() + ' dan pentingnya informasi yang jelas bagi nasabah di ' + region + '.'
+  });
+}
+let itemIndex = 0;
+const daily = [12, 17, 14, 21, 13, 19, 13];
+daily.forEach((count, day) => {
+  for (let i = 0; i < count; i++) {
+    const index = itemIndex++;
+    const shuffled = (index * 37) % 109;
+    const engagement = 4 + (index * 7) % 15;
+    addItem('Artha Graha', index, '2026-11-' + (12 + day), sentiments[shuffled < 71 ? 0 : shuffled < 90 ? 1 : 2], engagement);
+  }
+});
+let delta = 1195 - data.reduce((total, item) => total + item.engagement, 0);
+for (let i = 0; delta !== 0; i++) {
+  const adjustment = Math.sign(delta);
+  data[i % 109].engagement += adjustment;
+  delta -= adjustment;
+}
+['2026-10-20', '2026-10-31', '2026-11-05', '2026-11-10'].forEach((date, i) => addItem('Artha Graha', 109 + i, date, sentiments[i % 3], 7 + i));
+brands.filter(brand => brand !== 'Artha Graha').forEach((brand, entity) => {
+  ['2026-10-20', '2026-11-06', '2026-11-12', '2026-11-18'].forEach((date, i) => {
+    addItem(brand, entity * 7 + i, date, sentiments[i < 3 ? i : 1], 9 + (entity * 13 + i * 11) % 46);
+  });
+});
+// Each sample article represents a share of its entity's reference monitoring volume.
+brands.forEach((brand, index) => {
+  const [total, shares] = comparisonBaseline[index];
+  const scoped = data.filter(item => item.brand === brand);
+  const denominator = shares.reduce((a, b) => a + b, 0);
+  sentiments.forEach((sentiment, i) => {
+    const group = scoped.filter(item => item.sentiment === sentiment);
+    group.forEach(item => {
+      item.comparisonWeight = total * shares[i] / denominator / group.length;
+      // The published IBK percentages add to 99.99% after rounding.
+      item.sentimentWeight = total * shares[i] / 100 / group.length;
+    });
+  });
+});
+const defaultCrises = [
+  {id: 1, name: 'News Tokoh Artha Graha', detected: '22 April 2026, 09:27', mentions: 32, by: 'extraction', growth: '-58,44% (77)', start: '2026-04-01', end: '2026-12-31', frequency: '3600 minutes', recipients: '', impact: 'Moderate Impact', status: 'Active', source: 'Media Online'},
+  {id: 2, name: 'CS Palsu', detected: '22 April 2026, 09:16', mentions: 0, by: 'extraction', growth: 'New, 0% (0)', start: '2026-04-01', end: '2026-04-30', frequency: 'Every 1 Hour', recipients: '', impact: 'Moderate Impact', status: 'Active', source: 'Media Sosial'}
+];
+
+</script>
+<script>
+'use strict';
+
+const app = document.querySelector('#app');
+const overlay = document.querySelector('#overlay');
+const storage = {
+  get(key, fallback) {
+    try { return JSON.parse(localStorage.getItem('media-demo-' + key)) ?? fallback; }
+    catch { return fallback; }
+  },
+  set(key, value) {
+    try { localStorage.setItem('media-demo-' + key, JSON.stringify(value)); }
+    catch { notify('Penyimpanan browser tidak tersedia.'); }
+  }
+};
+const topicPages = ['Overview', 'Dashboard', 'News', 'Timeline', 'Analysis', 'Sentiment & Emotion', 'SNA', 'Extraction', 'PR Value', 'Maps', 'Statement Person'];
+const extraPages = ['Persons', 'Organizations', 'Keywords'];
+const comparisonPages = ['Dashboard', 'Share of Voice', 'Data Trends', 'Keyword'];
+const state = {
+  user: storage.get('user', ''), topics: storage.get('topics', savedDefaults), comparisons: storage.get('comparisons', ['Kompetitor']),
+  bookmarks: storage.get('bookmarks', {}), labels: storage.get('labels', []), crises: storage.get('crises', defaultCrises),
+  dark: storage.get('dark', false), profile: storage.get('profile', {}), language: storage.get('language', 'US'),
+  topicOpen: new Set([primary]), comparisonOpen: true, sidebar: true, extraction: false, sidebarSearch: '',
+  keyword: '', sentiment: '', period: 'Last 7 days', group: 'Daily', channel: '', region: '', chart: 'area',
+  based: 'Data Source', metric: 'Total Data', personTab: 'Top Person', keywordTab: 'Top Keyword',
+  newsSentiment: '', newsChannel: '', search: '', searched: false, listPage: 1,
+  compPeriod: '1 month', compLanguage: '', compChannel: '', compStart: '2026-10-20', compEnd: '2026-11-18',
+  voiceTab: 'Sentiment', voiceChart: 'pie', entity: '', regionTab: 'Persons', regionPage: 0,
+  crisisPeriod: '7 day', crisisStart: '2026-11-12', crisisEnd: '2026-11-18', crisisSource: '', crisisSort: 'By Created Date',
+  crisisFind: '', crisisPage: 1, pageSize: 10, bookmarkFind: '', bookmarkLabel: '', bookmarkSearch: false
+};
+
+const paths = {
+  search:'M21 21l-4.4-4.4M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z', topic:'M4 5h16v15H4z M8 9h8m-8 4h8m-8 4h5',
+  compare:'M4 20h16M6 16v-5m6 5V5m6 11V8', bookmark:'M6 4h12v17l-6-4-6 4z',
+  alert:'M10.2 4.5 2.7 18a1 1 0 0 0 .9 1.5h16.8a1 1 0 0 0 .9-1.5L13.8 4.5a2 2 0 0 0-3.6 0ZM12 9v4m0 3h.01',
+  menu:'M4 6h16M4 12h16M4 18h16', edit:'m14 6 4 4M4 20l4.5-1 11-11a2.8 2.8 0 0 0-4-4l-11 11L4 20Z',
+  sun:'M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
+  download:'M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4',
+  bell:'M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4',
+  grid:'M5 5h.01M12 5h.01M19 5h.01M5 12h.01M12 12h.01M19 12h.01M5 19h.01M12 19h.01M19 19h.01',
+  user:'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m8-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z',
+  folder:'M3 19V6a1 1 0 0 1 1-1h5l2 3h9a1 1 0 0 1 1 1v10z',
+  chevron:'m9 6 6 6-6 6', down:'m6 9 6 6 6-6',
+  gear:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM10 3h4l.6 2.3 2 .9 2.2-1.1 2.1 2.1-1.1 2.2.9 2 2.3.6v2l-2.3.6-.9 2 1.1 2.2-2.1 2.1-2.2-1.1-2 .9L14 23h-4l-.6-2.3-2-.9-2.2 1.1-2.1-2.1 1.1-2.2-.9-2L1 14v-2l2.3-.6.9-2-1.1-2.2 2.1-2.1 2.2 1.1 2-.9z',
+  layers:'m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5',
+  smile:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM8 14q4 5 8 0M9 9h.01M15 9h.01',
+  neutral:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM8 15h8M9 9h.01M15 9h.01',
+  sad:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM8 16q4-5 8 0M9 9h.01M15 9h.01',
+  bolt:'m13 2-9 12h7l-1 8 10-12h-7l1-8z', trend:'m3 17 6-6 4 4 7-8m-6 0h6v6',
+  calendar:'M4 6h16v14H4zm0 4h16M8 4v4m8-4v4', filter:'M3 5h18l-7 8v5l-4 2v-7z',
+  line:'m3 17 5-6 5 4 8-9', area:'M3 19v-5l5-5 5 4 8-7v13z',
+  pie:'M11 3a9 9 0 1 0 10 10H11zm3-1v8h8a9 9 0 0 0-8-8z', more:'M12 5h.01M12 12h.01M12 19h.01',
+  close:'m6 6 12 12M18 6 6 18', plus:'M12 5v14M5 12h14', trash:'M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5m4-5v5',
+  pause:'M9 5v14m6-14v14', play:'m8 5 11 7-11 7z', check:'m5 12 4 4L19 6', globe:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18m-9-9c5 5 5 13 0 18m0-18c-5 5-5 13 0 18'
+};
+const icon = name => '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (['grid','more'].includes(name) ? '3' : '1.7') + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + paths[name] + '"/></svg>';
+const logo = '<svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><path fill="#ed4960" d="M20 1.7 36 11v18L20 38.3 4 29V11z"/><path fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="M13 24v-7l7-4 7 4v7l-7 4zm7-11v15m-7-11 14 7m0-7-14 7"/></svg>';
+const htmlEscape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const e = htmlEscape;
+const fmt = value => new Intl.NumberFormat('id-ID', {maximumFractionDigits: 0}).format(value);
+const fixed = (value, places = 1) => value.toFixed(places).replace('.', ',');
+function perc(value, places = 1) {
+  const scale = 10 ** places;
+  const scaled = value * scale;
+  const lower = Math.floor(scaled);
+  const rounded = Math.abs(scaled - lower - 0.5) < 1e-9 ? lower + (lower % 2 !== 0 ? 1 : 0) : Math.round(scaled);
+  return fixed(rounded / scale, places) + '%';
+}
+const sum = values => values.reduce((total, value) => total + value, 0);
+const metricSum = (items, property) => sum(items.map(item => item[property]));
+const palette = ['#4675ed','#20b7a6','#9272eb','#f1aa53','#ef718a','#49a9d9','#81a54b','#af6c9b'];
+const sentimentColors = ['#22b8a3','#a5afc3','#f0748b'];
+const trendColors = ['#22b8a3','#a5afc3','#ef5b68'];
+const todayISO = () => new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 10);
+const shiftISO = (iso, days) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); };
+const allDates = Array.from({length: 30}, (_, i) => shiftISO(todayISO(), i - 29));
+const dayText = (date, year = false) => new Intl.DateTimeFormat('en-GB', {day:'numeric', month:'short', ...(year ? {year:'numeric'} : {}), timeZone:'UTC'}).format(new Date(date + 'T12:00:00Z'));
+const inRange = (item, range) => item.date >= range[0] && item.date <= range[1];
+const match = (item, term) => term.toLowerCase().trim().split(/\s+/).every(word => [item.title,item.brand,item.source,item.channel,item.sentiment,item.person,item.organization,item.region,item.topic,...item.keywords,...item.hashtags].join(' ').toLowerCase().includes(word));
+const action = (name, value = '') => 'data-action="' + name + '" data-value="' + e(value) + '"';
+const button = (label, name, value = '', className = '', glyph = '') => '<button type="button" class="btn ' + className + '" ' + action(name, value) + '>' + (glyph ? icon(glyph) : '') + e(label) + '</button>';
+const iconButton = (label, glyph, name, value = '', cls = '') => '<button type="button" class="icon-btn ' + cls + '" title="' + e(label) + '" aria-label="' + e(label) + '" ' + action(name, value) + '>' + icon(glyph) + '</button>';
+const pick = (name, current, options, title, glyph = '') => '<label class="select-wrap">' + (glyph ? icon(glyph) : '') + '<select data-field="' + name + '" aria-label="' + e(title) + '">' + options.map(option => {
+  const [value, label] = Array.isArray(option) ? option : [option, option];
+  return '<option value="' + e(value) + '"' + (String(current) === String(value) ? ' selected' : '') + '>' + e(label) + '</option>';
+}).join('') + '</select></label>';
+const input = (field, value, label, cls = '') => '<label class="search-input ' + cls + '">' + icon('search') + '<input data-live="' + field + '" value="' + e(value) + '" placeholder="' + e(label) + '" aria-label="' + e(label) + '"></label>';
+const tabs = (options, active, field, cls = '') => '<div class="tabs ' + cls + '">' + options.map(option => button(option, 'set', field + '|' + option, option === active ? 'selected' : '')).join('') + '</div>';
+const panel = (title, body, controls = '', cls = '') => '<section class="panel ' + cls + '"><header class="panel-head"><h2>' + e(title) + '</h2>' + controls + '</header>' + body + '</section>';
+const empty = (message = 'Tidak ada data yang cocok.') => '<div class="empty">' + icon('layers') + '<p>' + e(message) + '</p></div>';
+const dot = color => '<i class="dot" style="--dot:' + color + '"></i>';
+const badge = (label, kind = '') => '<span class="badge ' + kind + '">' + e(label) + '</span>';
+const legend = (labels, colors) => '<div class="legend">' + labels.map((label, i) => '<span>' + dot(colors[i]) + e(label) + '</span>').join('') + '</div>';
+const routeLink = (section, name, page) => '#' + [section, name, page].filter(Boolean).map(encodeURIComponent).join('/');
+const table = (heads, rows) => '<div class="table-scroll"><table><thead><tr>' + heads.map(head => '<th scope="col">' + e(head) + '</th>').join('') + '</tr></thead><tbody>' + (rows.length ? rows.map(row => '<tr>' + row.map(cell => '<td>' + cell + '</td>').join('') + '</tr>').join('') : '<tr><td colspan="' + heads.length + '">' + empty() + '</td></tr>') + '</tbody></table></div>';
+
+function getRoute() {
+  let parts = [];
+  try { parts = location.hash.slice(1).split('/').map(decodeURIComponent); } catch {}
+  const [section, name, page] = parts;
+  if (section === 'search' || section === 'crisis') return {section};
+  if (section === 'comparison') return {section, name: state.comparisons.includes(name) ? name : state.comparisons[0], page: comparisonPages.includes(page) ? page : 'Dashboard'};
+  return {section:'topic', name: state.topics.includes(name) ? name : state.topics[0], page: [...topicPages,...extraPages].includes(page) ? page : 'Overview'};
+}
+let route = getRoute();
+function go(section, name, page) {
+  closeOverlay();
+  const next = routeLink(section, name, page);
+  if (next === location.hash) render();
+  else location.hash = next;
+}
+window.addEventListener('hashchange', () => {
+  const next = getRoute();
+  if (next.name !== route.name || next.section !== route.section) {
+    Object.assign(state, {keyword:'', sentiment:'', channel:'', region:'', newsSentiment:'', newsChannel:'', sidebarSearch:''});
+  }
+  state.listPage = 1;
+  route = next;
+  if (route.section === 'topic' && route.name) state.topicOpen.add(route.name);
+  if (extraPages.includes(route.page)) state.extraction = true;
+  closeOverlay();
+  render();
+  window.scrollTo(0, 0);
+});
+
+function pillList(labels, values, colors, formatter = fmt) {
+  return '<div class="detailed-legend">' + labels.map((label, i) => '<div>' + dot(colors[i]) + '<span>' + e(label) + '</span><strong>' + formatter(values[i]) + '</strong></div>').join('') + '</div>';
+}
+function donut(labels, values, colors, center, caption, formatter = fmt) {
+  const total = sum(values);
+  let start = 0;
+  const stops = values.map((value, i) => {
+    const end = start + (total ? value / total * 100 : 0);
+    const stop = colors[i] + ' ' + start + '% ' + end + '%';
+    start = end;
+    return stop;
+  });
+  return '<div class="donut-block"><div class="donut" style="--ring:' + (total ? 'conic-gradient(' + stops.join(',') + ')' : 'var(--track)') + '" role="img" aria-label="' + e(labels.map((label, i) => label + ' ' + formatter(values[i])).join(', ')) + '"><div><strong>' + e(center) + '</strong><span>' + e(caption) + '</span></div></div>' + pillList(labels, values, colors, formatter) + '</div>';
+}
+let chartId = 0;
+function chart(labels, series, mode = 'line', height = 200, width = 920) {
+  const left = width < 400 ? 29 : 46, right = width - (width < 400 ? 12 : 30), top = 12, bottom = height - 28;
+  const largest = Math.max(1, ...series.flatMap(entry => entry.values));
+  const stepUnit = 10 ** Math.floor(Math.log10(largest / 4));
+  const ratio = largest / 4 / stepUnit;
+  const step = [1, 2, 2.5, 5, 10].find(option => option >= ratio) * stepUnit;
+  const maximum = Math.max(4, Math.ceil(largest / step) * step);
+  const x = index => left + (right - left) * (index + .5) / Math.max(labels.length, 1);
+  const y = value => bottom - (bottom - top) * value / maximum;
+  const id = 'fade-' + ++chartId;
+  const guides = Array.from({length:5}, (_, i) => {
+    const value = maximum * i / 4;
+    return '<line x1="' + left + '" x2="' + right + '" y1="' + y(value) + '" y2="' + y(value) + '"/><text x="' + (left - 10) + '" y="' + (y(value) + 4) + '" text-anchor="end">' + fmt(value) + '</text>';
+  }).join('');
+  const tick = Math.ceil(labels.length / (width < 400 ? 4 : 7));
+  const dates = labels.map((label, i) => i % tick === 0 || i === labels.length - 1 ? '<text x="' + x(i) + '" y="' + (bottom + 22) + '" text-anchor="middle">' + e(label) + '</text>' : '').join('');
+  const lines = series.map((entry, s) => {
+    const points = entry.values.map((value, i) => [x(i), y(value)]);
+    const polyline = points.map(point => point.join(',')).join(' ');
+    const title = (value, i) => '<title>' + e(labels[i] + ' · ' + entry.label + ' · ' + fmt(value)) + '</title>';
+    if (mode === 'bar') {
+      const barWidth = Math.min(28, (right - left) / labels.length / (series.length + 1));
+      return entry.values.map((value, i) => '<rect rx="2" fill="' + entry.color + '" x="' + (x(i) + barWidth * (s - series.length / 2)) + '" y="' + y(value) + '" width="' + Math.max(1, barWidth - 2) + '" height="' + (bottom - y(value)) + '">' + title(value, i) + '</rect>').join('');
+    }
+    const area = mode === 'area' && s === 0 && points.length ? '<polygon points="' + points[0][0] + ',' + bottom + ' ' + polyline + ' ' + points.at(-1)[0] + ',' + bottom + '" fill="url(#' + id + ')"/>' : '';
+    return area + '<polyline points="' + polyline + '" fill="none" stroke="' + entry.color + '" stroke-width="2.4" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>' +
+      points.map(([cx, cy], i) => '<circle class="chart-point" cx="' + cx + '" cy="' + cy + '" r="' + (labels.length > 14 ? 2.7 : 4) + '" stroke="' + entry.color + '" stroke-width="2" fill="var(--surface)">' + title(entry.values[i], i) + '</circle>').join('');
+  }).join('');
+  return '<div class="chart-scroll"><svg class="chart" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-label="' + e(series.map(item => item.label).join(', ')) + '" style="--chart-ratio:' + width + '/' + height + '"><defs><linearGradient id="' + id + '" x2="0%" y2="100%"><stop stop-color="' + (series[0]?.color || palette[0]) + '" stop-opacity=".22"/><stop offset="100%" stop-color="' + (series[0]?.color || palette[0]) + '" stop-opacity=".025"/></linearGradient></defs><g class="chart-grid">' + guides + '</g>' + dates + lines + '</svg></div>';
+}
+function tally(items, property, weight) {
+  const counts = new Map();
+  items.forEach(item => [item[property]].flat().forEach(value => { if (!value) return; counts.set(value, (counts.get(value) || 0) + (weight ? item[weight] : 1)); }));
+  return [...counts].sort((a, b) => b[1] - a[1]);
+}
+const countsFor = (items, key, keys, weight) => keys.map(label => sum(items.filter(item => item[key] === label).map(item => weight ? item[weight] : 1)));
+function bars(rows, color = palette[0]) {
+  const max = Math.max(1, ...rows.map(row => row[1]));
+  return rows.length ? '<div class="bars">' + rows.map(([label, value]) => '<div class="bar-row"><span>' + e(label) + '</span><div><i style="width:' + value / max * 100 + '%;background:' + color + '"></i></div><strong>' + fmt(value) + '</strong></div>').join('') + '</div>' : empty();
+}
+function stacked(rows, labels, colors, places = 2) {
+  return legend(labels, colors) + '<div class="stack-list">' + rows.map(([name, values]) => {
+    const total = sum(values);
+    return '<div class="stack-row"><b>' + e(name) + '</b><div class="stack-track">' + values.map((value, i) => value ? '<span title="' + e(labels[i] + ' ' + perc(value, places)) + '" style="width:' + value / total * 100 + '%;background:' + colors[i] + '">' + (value >= 10 ? perc(value, places) : '') + '</span>' : '').join('') + '</div><div class="stack-values">' + values.map((value, i) => '<span>' + dot(colors[i]) + perc(value, places) + '</span>').join('') + '</div></div>';
+  }).join('') + '</div>';
+}
+function seriesFor(items, dates, labels, key, metric, colors, grouping = 'Daily') {
+  const bins = [];
+  const size = grouping === 'Weekly' ? 7 : 1;
+  for (let i = 0; i < dates.length; i += size) bins.push(dates.slice(i, i + size));
+  return {
+    labels: bins.map(bin => dayText(bin[0]) + (bin.length > 1 ? ' – ' + dayText(bin.at(-1)) : '')),
+    series: labels.map((label, i) => ({label, color: colors[i], values: bins.map(bin => {
+      const scoped = items.filter(item => bin.includes(item.date) && (!key || item[key] === label));
+      return metric ? metricSum(scoped, metric) : scoped.length;
+    })}))
+  };
+}
+function movementOptions() {
+  return '<div class="row">' + pick('metric', state.metric, ['Total Data','Total Engagement'], 'Data Movement metric') +
+    '<div class="icon-segment">' + ['line','bar','area'].map(mode => iconButton(mode[0].toUpperCase() + mode.slice(1) + ' chart', mode === 'bar' ? 'compare' : mode, 'set', 'chart|' + mode, state.chart === mode ? 'selected' : '')).join('') + '</div>' +
+    iconButton('Data Movement options','more','movementMenu') + '</div>';
+}
+function topicSource(name) {
+  if (!name) return [];
+  name = state.topicAliases[name] || name;
+  if (name === primary) return data.filter(item => item.brand === 'Artha Graha');
+  if (savedDefaults.includes(name)) return data.filter(item => item.brand === 'Artha Graha' && item.topic === name);
+  return data.filter(item => match(item, name));
+}
+const topicRange = () => { const end = allDates.at(-1); return [state.period === 'Last 30 days' ? allDates[0] : state.period === 'Last 14 days' ? shiftISO(end, -13) : state.period === 'Today' ? end : shiftISO(end, -6), end]; };
+const topicFilter = (item, range) => inRange(item, range) && (!state.keyword || match(item, state.keyword)) &&
+  (!state.sentiment || item.sentiment === state.sentiment) && (!state.channel || item.channel === state.channel) && (!state.region || item.region === state.region);
+const sentimentShares = values => values.map(value => sum(values) ? value / sum(values) * 100 : 0);
+function sentimentDonut(items) {
+  return donut(sentiments, sentimentShares(countsFor(items, 'sentiment', sentiments)), sentimentColors, fmt(items.length), 'Total data', perc);
+}
+function statCards(items, baseline) {
+  const shares = countsFor(items, 'sentiment', sentiments);
+  const change = baseline && baseline >= 10 ? (items.length - baseline) / baseline * 100 : null;
+  const cards = [
+    ['Total Data', fmt(items.length), 'Mentions terpantau', 'layers', 'blue'],
+    ...sentiments.map((sentiment, i) => [sentiment, perc(sentimentShares(shares)[i]), fmt(shares[i]) + ' mentions', ['smile','neutral','sad'][i], ['teal','slate','pink'][i]]),
+    ['Total Engagement', engText(metricSum(items, 'engagement')), 'Interaksi media', 'bolt', 'violet'],
+    ['Growth', change === null ? '—' : (change > 0 ? '+' : '') + perc(change), 'vs periode sebelumnya', 'trend', 'green']
+  ];
+  return '<div class="stat-grid">' + cards.map(([label, value, small, glyph, cls]) => '<article class="stat"><div class="stat-top"><span>' + label + '</span><span class="stat-icon ' + cls + '">' + icon(glyph) + '</span></div><strong>' + value + '</strong><small>' + small + '</small></article>').join('') + '</div>';
+}
+function overview(name) {
+  const range = topicRange();
+  const dates = allDates.filter(date => date >= range[0] && date <= range[1]);
+  const source = topicSource(name);
+  const items = source.filter(item => topicFilter(item, range));
+  const prevEnd = allDates.indexOf(range[0]) - 1;
+  const baseline = prevEnd >= 0 ? source.filter(item => topicFilter(item, [allDates[Math.max(0, prevEnd - dates.length + 1)], allDates[prevEnd]])).length : 0;
+  const split = state.based === 'Data Source' ? sources : savedDefaults.slice(1).concat(primary);
+  const splitKey = state.based === 'Data Source' ? 'channel' : 'topic';
+  const movement = seriesFor(items, dates, split, splitKey, state.metric === 'Total Engagement' ? 'engagement' : '', palette, state.group);
+  const engagement = seriesFor(items, dates, ['Engagement'], '', 'engagement', [palette[2]], state.group);
+  const peopleRows = tally(items, state.personTab === 'Top Person' ? 'person' : 'organization').slice(0, 8);
+  const keywordRows = tally(items, state.keywordTab === 'Top Keyword' ? 'keywords' : 'hashtags').slice(0, 14);
+  const channelRows = countsFor(items, 'channel', sources);
+  return statCards(items, baseline) +
+    '<div class="toolbar overview-tools"><div class="row grow">' + input('keyword', state.keyword, 'Keyword Filter') +
+    pick('sentiment', state.sentiment, [['','Sentiment'],...sentiments], 'Sentiment') +
+    pick('period', state.period, ['Today','Last 7 days','Last 14 days','Last 30 days'], 'Date range', 'calendar') +
+    pick('group', state.group, ['Daily','Weekly'], 'Interval') + iconButton('Advanced filters','filter','filters','',state.channel || state.region ? 'selected' : '') +
+    '</div><span class="range">' + dayText(range[0]) + ' – ' + dayText(range[1], true) + '</span></div>' +
+    panel('Data Movement', '<div class="movement-meta"><div class="row"><span>Based On:</span>' + tabs(['Data Source','Extraction Issue'], state.based, 'based', 'segment') + '</div>' + legend(split, palette) + '</div>' +
+      chart(movement.labels, movement.series, state.chart, 236), movementOptions(), 'movement') +
+    '<div class="triple">' +
+    panel('Total Data', '<div class="panel-total"><strong>' + fmt(items.length) + '</strong><span>Mentions</span></div>' + bars(sources.map((name, i) => [name,channelRows[i]]))) +
+    panel('Total Sentiment', sentimentDonut(items)) +
+    panel('Total Engagement', '<div class="panel-total"><strong>' + engText(metricSum(items,'engagement')) + '</strong><span>Interaksi</span></div>' + chart(engagement.labels, engagement.series, 'area', 105, 337), '', 'engagement-panel') +
+    '</div><div class="double">' +
+    panel('Entity Ranking', tabs(['Top Person','Top Organization'],state.personTab,'personTab') + (peopleRows.length ? '<ol class="ranking">' + peopleRows.map(([label,value], i) => '<li><span class="rank">' + (i+1) + '</span><span>' + e(label) + '</span><strong>' + fmt(value) + '</strong></li>').join('') + '</ol>' : empty())) +
+    panel('Keyword Ranking', tabs(['Top Keyword','Top Hashtag'],state.keywordTab,'keywordTab') + '<div class="chips">' +
+      (keywordRows.length ? keywordRows.map(([label,value]) => '<button type="button" class="chip" ' + action('set','keyword|' + label) + '>' + e(label) + '<b>' + fmt(value) + '</b></button>').join('') : empty()) + '</div>') + '</div>';
+}
+
+const articleOrder = (a, b) => b.date.localeCompare(a.date) || String(b.id).localeCompare(String(a.id));
+function article(item, mode = '') {
+  const marked = Object.hasOwn(state.bookmarks, item.id);
+  const label = state.bookmarks[item.id];
+  return '<article class="article ' + mode + '"><div class="article-symbol">' + icon(item.channel === 'Media Online' ? 'topic' : 'globe') + '</div><div class="article-content"><div class="article-meta">' + e(item.source) + ' <span>·</span> ' + dayText(item.date, true) + '</div><button type="button" class="article-title" ' + action('article', item.id) + '>' + e(item.title) + '</button><div class="article-meta">' + badge(item.sentiment, item.sentiment.toLowerCase()) + '<span>' + icon('bolt') + ' ' + engText(item.engagement) + ' engagement</span>' + (mode === 'saved' && label ? badge(label) : '') + '</div></div><div class="row">' + (mode === 'saved' ? iconButton('Move to label','folder','assignLabel',item.id) : '') +
+    iconButton(marked ? 'Remove bookmark' : 'Bookmark article', mode === 'saved' ? 'trash' : 'bookmark','bookmark',item.id,marked ? 'marked' : '') + '</div></article>';
+}
+function pagination(page, max, name) {
+  return '<div class="pagination">' +
+    '<button type="button" class="icon-btn" aria-label="Previous page" ' + action(name, page - 1) + (page <= 1 ? ' disabled' : '') + '>‹</button>' +
+    '<span>Page <b>' + page + '</b> / ' + max + '</span>' +
+    '<button type="button" class="icon-btn" aria-label="Next page" ' + action(name, page + 1) + (page >= max ? ' disabled' : '') + '>›</button></div>';
+}
+function articles(items, timeline = false) {
+  const sorted = [...items].sort(articleOrder);
+  const max = Math.max(1, Math.ceil(sorted.length / 12));
+  const page = Math.min(state.listPage, max);
+  const slice = sorted.slice((page - 1) * 12, page * 12);
+  return (slice.length ? '<div class="articles">' + slice.map((item, i) => (timeline && item.date !== slice[i-1]?.date ? '<h3 class="timeline-date">' + icon('calendar') + dayText(item.date, true) + '</h3>' : '') + article(item)).join('') + '</div>' : empty()) + (max > 1 ? pagination(page, max, 'listPage') : '');
+}
+function searchPage() {
+  const illustration = '<div class="search-art" aria-hidden="true"><div class="search-sheet"><i></i><i></i><i></i></div><div class="search-glass">' + icon('search') + '</div><div class="search-spark">✦</div></div>';
+  const results = data.filter(item => match(item, state.search));
+  return '<section class="panel search-hero">' + illustration + '<h1>What issue are you looking for?</h1><form data-form="search" class="search-form"><label for="search-term" class="visually-hidden">Search media</label><textarea id="search-term" name="term" maxlength="4000" placeholder="Enter a brand, competitor, hashtag, topic or whatever...">' + e(state.search) + '</textarea><div class="form-actions"><span id="search-counter">' + state.search.length + '/4000</span><button class="btn primary">' + icon('search') + ' Search</button></div></form></section>' +
+    (state.searched ? panel('Search Results', '<p class="muted section-note">' + results.length + ' hasil' + (state.search ? ' untuk “' + e(state.search) + '”' : '') + '</p>' + articles(results)) : '') +
+    panel('Saved Topics', input('savedSearch',state.savedSearch || '', 'Search Saved Topics') + '<div class="saved-list" id="search-saved">' + searchSaved() + '</div>', button('Manage Topics ' + state.topics.length,'manageTopics','','','gear'));
+}
+function searchSaved() {
+  const topics = state.topics.filter(name => name.toLowerCase().includes((state.savedSearch || '').toLowerCase()));
+  return topics.length ? topics.map(name => '<a href="' + routeLink('topic',name,'Overview') + '">' + icon('folder') + '<span>' + e(name) + '</span>' + icon('chevron') + '</a>').join('') : empty('Tidak ada topik tersimpan yang cocok.');
+}
+function topicPage(name, page) {
+  if (!name) return panel('Topic', empty('Tambahkan topik untuk memulai.') + button('Manage Topics 0','manageTopics','','','gear'));
+  if (page === 'Overview') return overview(name);
+  const items = topicSource(name);
+  const recent = items.filter(item => inRange(item, topicRange()));
+  const ranked = property => bars(tally(items, property).slice(0, 12));
+  switch (page) {
+    case 'News': {
+      const news = items.filter(item => (!state.newsSentiment || item.sentiment === state.newsSentiment) && (!state.newsChannel || item.channel === state.newsChannel || item.source === state.newsChannel));
+      return panel('News', '<div class="toolbar">' + pick('newsSentiment',state.newsSentiment,[['','All Sentiment'],...sentiments],'News sentiment') +
+        pick('newsChannel',state.newsChannel,[['','All Source'],...sources,...outlets],'News source') + '<span class="muted">' + news.length + ' hasil</span></div>' + articles(news));
+    }
+    case 'Timeline': return panel('Timeline', articles(items, true));
+    case 'Dashboard': return statCards(recent, 0) + '<div class="double">' + panel('Coverage by Channel', ranked('channel')) + panel('Total Sentiment', sentimentDonut(recent)) + '</div>' + panel('Latest News', articles(items.slice().sort(articleOrder).slice(0, 5)));
+    case 'Analysis': {
+      const top = (key) => tally(items, key)[0]?.[0] || '—';
+      return statCards(items, 0) + '<div class="triple">' + [['Dominant Sentiment',top('sentiment')],['Top Source',top('source')],['Top Region',top('region')]].map(([title,value]) => panel(title, '<p class="insight">' + e(value) + '</p>')).join('') +
+        '</div><div class="double">' + panel('Most Mentioned Keywords', ranked('keywords')) + panel('Engagement by Source', bars(sources.map(channel => [channel,metricSum(items.filter(item => item.channel === channel),'engagement')]))) + '</div>';
+    }
+    case 'Sentiment & Emotion': return '<div class="double">' + panel('Total Sentiment', sentimentDonut(items)) + panel('Emotion Distribution', bars(emotions.map((emotion,i) => [emotion,countsFor(items,'emotion',emotions)[i]]), palette[2])) + '</div>';
+    case 'SNA': return panel('Person–Organization Connections', table(['Person','Organization','Co-mentions'], tally(items.filter(item => item.person).map(item => ({pair:item.person + '|' + item.organization})), 'pair').map(([pair,count]) => [...pair.split('|').map(e),fmt(count)])));
+    case 'Extraction': return '<div class="triple">' + panel('Persons', ranked('person')) + panel('Organizations', ranked('organization')) + panel('Keywords', ranked('keywords')) + '</div>';
+    case 'Persons': return panel('Extracted Persons', ranked('person'));
+    case 'Organizations': return panel('Extracted Organizations', ranked('organization'));
+    case 'Keywords': return panel('Extracted Keywords', ranked('keywords'));
+    case 'PR Value': return panel('PR Value', '<p class="section-note muted">Estimasi demo Rp50.000 per mention dan Rp1.000 per interaksi.</p>' + table(['Source','Mentions','Engagement','Estimated PR Value'], tally(items,'source').map(([source,count]) => {
+      const engagement = metricSum(items.filter(item => item.source === source),'engagement');
+      return [e(source),fmt(count),fmt(engagement),'Rp' + fmt(count * 50000 + engagement * 1000)];
+    })));
+    case 'Maps': return panel('Mentions by Region', bars(regions.map((region, i) => [region, countsFor(items,'region',regions)[i]])));
+    case 'Statement Person': return panel('Statement Person', table(['Date','Person','Statement'], items.slice().sort(articleOrder).map(item => [dayText(item.date,true),e(item.person),e(item.statement)])));
+  }
+}
+
+const presets = ['Today','1 day','7 day','1 month','Set Time'];
+function presetBar(scope, active) {
+  return '<div class="tabs segment">' + presets.map(preset => button(preset,'preset',scope + '|' + preset,preset === active ? 'selected' : '')).join('') + '</div>';
+}
+const compRange = () => [state.compStart,state.compEnd];
+const compItems = () => data.filter(item => inRange(item,compRange()) && (!state.compLanguage || item.language === state.compLanguage) && (!state.compChannel || item.channel === state.compChannel));
+const compCount = items => metricSum(items,'comparisonWeight');
+function compSentiments(items) {
+  const total = compCount(items);
+  return countsFor(items,'sentiment',sentiments,'sentimentWeight').map(weight => total ? weight / total * 100 : 0);
+}
+function compToolbar() {
+  return '<div class="toolbar comparison-tools"><div class="row">' + pick('compLanguage',state.compLanguage,[['','Language'],'Indonesia','English'],'Language') +
+    pick('compChannel',state.compChannel,[['','All Channel'],...sources],'Channel') + '</div>' + presetBar('comp',state.compPeriod) +
+    '<span class="range">' + icon('calendar') + dayText(state.compStart,true) + ', 00:00 WIB – ' + dayText(state.compEnd,true) + ', 23:59 WIB</span></div>';
+}
+function regionTrends(items) {
+  const scoped = items.filter(item => !state.entity || item.brand === state.entity);
+  const count = regions.map(region => [region, new Set(scoped.filter(item => item.region === region).map(item => item[state.regionTab === 'Persons' ? 'person' : 'organization'])).size]);
+  const start = state.regionPage * 5;
+  return panel('Trends by Region', tabs(['Persons','Organization'],state.regionTab,'regionTab') +
+    '<div class="chips">' + [['','All Entities'],...brands.map(name => [name,name])].map(([value,label]) => button(label,'set','entity|' + value,'chip ' + (state.entity === value ? 'selected' : ''))).join('') + '</div>' +
+    bars(count.slice(start,start + 5)) + '<div class="region-footer"><span>Showing ' + (start + 1) + ' - ' + (start + 5) + ' from 10 region</span>' + pagination(state.regionPage + 1,2,'regionPage') + '</div>');
+}
+function comparisonPage(page) {
+  if (!route.name) return panel('Comparison', empty('Tambahkan perbandingan untuk memulai.') + button('Manage Comparison 0','manageComparison','','','gear'));
+  const items = compItems();
+  const dates = allDates.filter(date => inRange({date},compRange()));
+  const groups = brands.map(brand => items.filter(item => item.brand === brand));
+  const totals = groups.map(compCount);
+  if (page === 'Dashboard') {
+    const movement = seriesFor(items,dates,brands,'brand','comparisonWeight',palette);
+    const sentimentRows = [2,4,0,1,3].map(i => [brands[i],compSentiments(groups[i])]);
+    const emotionRows = brands.map((brand,i) => [brand,sentimentShares(countsFor(groups[i],'emotion',emotions,'comparisonWeight'))]);
+    return compToolbar() + '<div class="double comparison-grid">' +
+      panel('Data Movement', legend(brands,palette) + chart(movement.labels,movement.series,'line',250,650)) +
+      panel('Total number and percentage of votes', donut(brands,sentimentShares(totals),palette,fmt(sum(totals)),'Total data',perc)) + '</div>' +
+      panel('Sentiment Comparison',stacked(sentimentRows,sentiments,sentimentColors)) +
+      panel('Emotion Every Entity',stacked(emotionRows,emotions,palette,1)) + regionTrends(items);
+  }
+  if (page === 'Share of Voice') {
+    const cards = brands.map((brand,i) => {
+      const group = groups[i];
+      let labels = sentiments, values = compSentiments(group), colors = sentimentColors, total = totals[i];
+      if (state.voiceTab === 'Source') {
+        labels = sources; values = sentimentShares(countsFor(group,'channel',labels,'comparisonWeight')); colors = palette;
+      } else if (state.voiceTab === 'News Media') {
+        const news = group.filter(item => item.channel === 'Media Online');
+        labels = outlets; values = sentimentShares(countsFor(news,'source',labels,'comparisonWeight')); colors = palette; total = compCount(news);
+      } else if (state.voiceTab === 'Overall') {
+        labels = [brand,'Other Entities']; values = sentimentShares([total,sum(totals) - total]); colors = [palette[i], '#a5afc3'];
+      }
+      const visual = state.voiceChart === 'pie' ? donut(labels,values,colors,fmt(total),'Total data',perc) :
+        '<div class="panel-total"><strong>' + fmt(total) + '</strong><span>Total data</span></div>' + stacked([[brand,values]],labels,colors,1);
+      return panel(brand,visual,iconButton(brand + ' options','more','voiceMenu',i));
+    });
+    return compToolbar() + '<div class="toolbar">' + tabs(['Sentiment','Source','News Media','Overall'],state.voiceTab,'voiceTab') +
+      '<div class="icon-segment">' + iconButton('Pie chart','pie','set','voiceChart|pie',state.voiceChart === 'pie' ? 'selected' : '') + iconButton('Bar chart','compare','set','voiceChart|bar',state.voiceChart === 'bar' ? 'selected' : '') + '</div></div><div class="voice-grid">' + cards.join('') + '</div>';
+  }
+  if (page === 'Data Trends') {
+    return compToolbar() + brands.map((brand,i) => {
+      const trend = seriesFor(groups[i],dates,sentiments,'sentiment','comparisonWeight',trendColors);
+      return panel(brand,legend(sentiments,trendColors) + chart(trend.labels,trend.series,'line',205));
+    }).join('');
+  }
+  const ranks = tally(items,'keywords','comparisonWeight');
+  const lookup = groups.map(group => new Map(tally(group,'keywords','comparisonWeight')));
+  return compToolbar() + panel('Keyword Comparison',table(['Keyword',...brands],ranks.map(([term]) => [e(term),...lookup.map(map => fmt(map.get(term) || 0))])));
+}
+
+const crisisHeaders = ['NO','CRISIS NAME','DETECTED DATE','TOTAL MENTIONS','CRISIS BY','DATA GROWTH','MONITORING PERIOD','FREQUENCY','RECIPIENTS','STATUS IMPACT','STATUS','ACTION'];
+const shortDate = value => value.split('-').reverse().join('/');
+function crisisRows() {
+  const matches = state.crises.filter(crisis => (!state.crisisSource || state.crisisSource === crisis.source) &&
+    (state.crisisPeriod === '7 day' || (crisis.start <= state.crisisEnd && crisis.end >= state.crisisStart)) &&
+    [crisis.name,crisis.by,crisis.status,crisis.recipients].join(' ').toLowerCase().includes(state.crisisFind.trim().toLowerCase()));
+  return matches.sort((a,b) => state.crisisSort === 'By Name' ? a.name.localeCompare(b.name) :
+    state.crisisSort === 'By Total Mentions' ? crisisMentions(b) - crisisMentions(a) : (b.id > 2 || a.id > 2 ? b.id - a.id : a.id - b.id));
+}
+function crisisValues(crisis, index) {
+  return [index,crisis.name,crisis.detected,crisisMentions(crisis),crisis.by,crisis.growth,shortDate(crisis.start) + ' - ' + shortDate(crisis.end),
+    crisis.frequency,crisis.recipients || '—',crisis.impact,crisis.status];
+}
+function crisisTable() {
+  const rows = crisisRows();
+  const max = Math.max(1,Math.ceil(rows.length / state.pageSize));
+  const page = Math.min(state.crisisPage,max);
+  const offset = (page - 1) * state.pageSize;
+  return '<div class="crisis-meta"><strong>' + rows.length + ' Crisis</strong></div>' +
+    table(crisisHeaders,rows.slice(offset,offset + state.pageSize).map((crisis,i) => [
+      ...crisisValues(crisis,offset + i + 1).slice(0,9).map(e),badge(crisis.impact,crisis.impact === 'High Impact' ? 'negative' : crisis.impact === 'Low Impact' ? 'neutral' : 'moderate'),
+      badge(crisis.status,crisis.status === 'Active' ? 'positive' : 'neutral'),'<div class="row crisis-actions">' +
+      iconButton('Edit ' + crisis.name,'edit','editCrisis',crisis.id) + iconButton((crisis.status === 'Paused' ? 'Resume ' : 'Pause ') + crisis.name,crisis.status === 'Paused' ? 'play' : 'pause','pauseCrisis',crisis.id) +
+      iconButton('Delete ' + crisis.name,'trash','deleteCrisis',crisis.id) + '</div>'
+    ])) + '<div class="region-footer">' + pick('pageSize',state.pageSize,[10,20,30,50,100].map(n => [n,n + ' item per page']),'Items per page') + pagination(page,max,'crisisPage') + '</div>';
+}
+function crisisPage() {
+  return '<div class="toolbar">' + presetBar('crisis',state.crisisPeriod) + '<span class="range">' + icon('calendar') + dayText(state.crisisStart,true) + ', 10:28 GMT – ' + dayText(state.crisisEnd,true) + ', 10:28 GMT</span></div>' +
+    panel('Crisis Alert', '<div class="toolbar crisis-tools">' +
+    pick('crisisSource',state.crisisSource,[['','All Source'],'Media Online','Media Sosial',...sources.slice(1)],'Crisis source') +
+    pick('crisisSort',state.crisisSort,['By Created Date','By Name','By Total Mentions'],'Crisis sort') +
+    input('crisisFind',state.crisisFind,'Find Crisis Alert') + '</div><div id="crisis-table">' + crisisTable() + '</div>',
+    '<div class="row">' + button('Download Report','crisisCSV','','','download') + button('New Crisis','editCrisis','','primary','plus') + '</div>', 'crisis-panel');
+}
+
+function leftRail() {
+  const entries = [['search','Search','search'],['topic','Topic','topic'],['comparison','Comparison','compare'],['bookmark','Bookmark','bookmark'],['crisis','Crisis Alert','alert']];
+  return '<nav class="rail" aria-label="Main navigation"><a class="brand-mark" href="#topic" aria-label="Media Monitoring home">' + logo + '</a><div class="rail-nav">' +
+    entries.map(([section,label,glyph]) => section === 'bookmark'
+      ? '<button type="button" class="rail-link" ' + action('bookmarks') + '>' + icon(glyph) + '<span>' + label + '</span></button>'
+      : '<a class="rail-link' + (route.section === section ? ' active' : '') + '" href="#' + section + '"' + (route.section === section ? ' aria-current="page"' : '') + '>' + icon(glyph) + '<span>' + label + '</span></a>').join('') +
+    '</div></nav>';
+}
+function topicSubnav(name) {
+  return '<div class="subnav">' + topicPages.map(page => {
+    const active = name === route.name && page === route.page;
+    const link = '<a class="' + (active ? 'active' : '') + '" href="' + routeLink('topic', name, page) + '">' + e(page) + '</a>';
+    if (page !== 'Extraction') return link;
+    return '<div class="extraction-row">' + link + iconButton('Toggle Extraction','down','toggleExtraction') + '</div>' +
+      (state.extraction ? '<div class="extraction-sub">' + extraPages.map(sub => '<a class="' + (name === route.name && sub === route.page ? 'active' : '') + '" href="' + routeLink('topic',name,sub) + '">' + sub + '</a>').join('') + '</div>' : '');
+  }).join('') + '</div>';
+}
+function sidebarContents() {
+  if (route.section === 'comparison') return state.comparisons.filter(name => name.toLowerCase().includes(state.sidebarSearch.toLowerCase())).map(name => {
+    const open = name === route.name && state.comparisonOpen;
+    return '<div class="side-folder ' + (name === route.name ? 'current' : '') + '">' +
+      '<button type="button" class="folder-btn" ' + action('comparisonFolder',name) + ' aria-expanded="' + open + '">' + icon('folder') + '<span>' + e(name) + '</span>' + icon(open ? 'down' : 'chevron') + '</button>' +
+      (open ? '<div class="subnav">' + comparisonPages.map(page => '<a class="' + (page === route.page ? 'active' : '') + '" href="' + routeLink('comparison',name,page) + '">' + page + '</a>').join('') + '</div>' : '') + '</div>';
+  }).join('');
+  return state.topics.filter(name => name.toLowerCase().includes(state.sidebarSearch.toLowerCase())).map(name => {
+    const open = state.topicOpen.has(name);
+    return '<div class="side-folder ' + (name === route.name ? 'current' : '') + '"><button type="button" class="folder-btn" ' + action('topicFolder',name) + ' aria-expanded="' + open + '">' +
+      icon('folder') + '<span>' + e(name) + '</span>' + icon(open ? 'down' : 'chevron') + '</button>' +
+      (open ? topicSubnav(name) : '') + '</div>';
+  }).join('') || '<p class="side-empty">Tidak ada topik yang cocok.</p>';
+}
+function sidebar() {
+  const comp = route.section === 'comparison';
+  return '<aside class="sidebar"><div class="sidebar-intro"><div class="sidebar-title"><span class="sidebar-symbol">' + icon(comp ? 'compare' : 'topic') + '</span><h2>' + (comp ? 'Comparison' : 'Topic') + '</h2></div>' +
+    input('sidebarSearch',state.sidebarSearch,comp ? 'Search Comparisons' : 'Search Saved Topics') + '</div><div class="sidebar-scroll" id="side-folders">' + sidebarContents() + '</div><div class="sidebar-bottom">' +
+    button(comp ? 'Manage Comparison ' + state.comparisons.length : 'Manage Topics ' + state.topics.length,comp ? 'manageComparison' : 'manageTopics','','','gear') + '</div></aside>';
+}
+const sectionName = () => ({topic:'Topic',comparison:'Comparison',search:'Search',crisis:'Crisis Alert'})[route.section];
+function accountButton() {
+  const name = state.profile.name ? 'Your account · ' + state.profile.name : 'Your account';
+  const initials = state.profile.name?.split(/\s+/).slice(0,2).map(part => part[0].toUpperCase()).join('');
+  if (!initials) return iconButton(name,'user','account','','avatar');
+  return '<button type="button" class="icon-btn avatar" ' + action('account') + ' aria-label="' + e(name) + '">' + e(initials) + '</button>';
+}
+function topbar() {
+  return '<header class="topbar"><div class="row topbar-title">' + iconButton('Toggle sidebar','menu','sidebar') + '<span>' + e(route.page || sectionName()) + '</span>' +
+    (route.name ? iconButton('Edit ' + sectionName(),'edit',route.section === 'topic' ? 'renameTopic' : 'renameComparison',route.name,'title-edit') : '') + '</div><div class="row top-actions">' +
+    iconButton('Toggle theme','sun','theme') + iconButton('Downloads','download','downloads','','with-dot') +
+    iconButton('Notifications','bell','notifications','','with-dot') +
+    button(state.language === 'US' ? '🇺🇸' : '🇮🇩','language','','flag') +
+    iconButton('Select Product','grid','products') + accountButton() + '</div></header>';
+}
+function heading() {
+  if (route.section === 'search') return '';
+  const name = route.section === 'crisis' ? 'Crisis Alert' : route.name || sectionName();
+  const description = route.section === 'crisis' ? 'Pantau dan kelola peringatan media.' :
+    route.section === 'comparison' ? 'Bandingkan percakapan dan sentimen antar bank.' :
+    route.page === 'Overview' ? 'Ringkasan liputan media, sentimen, dan interaksi.' : '';
+  return '<div class="page-heading"><div class="breadcrumb">' + e(sectionName()) + (route.page ? ' <span>›</span> ' + e(route.page) : '') + '</div><h1>' + e(name) + '</h1>' + (description ? '<p>' + description + '</p>' : '') + '</div>';
+}
+function login() {
+  return '<main class="login-shell"><section class="login-card"><div class="brand-lockup">' + logo + '<strong>Media Monitoring</strong></div><h1>Sign in</h1><p class="muted">Masuk untuk membuka dashboard monitoring media.</p><form data-form="login"><label>Email<input name="email" placeholder="nama@email.com" autocomplete="username"></label><label>Password<input name="password" type="password" placeholder="Masukkan password" autocomplete="current-password"></label><button class="btn primary">Login Now ' + icon('chevron') + '</button><button type="button" class="btn" ' + action('demoLogin') + '>Masuk sebagai demo</button></form><footer>' + footerText() + '</footer></section><aside class="login-visual"><div class="login-radar"><i></i><i></i><i></i><i></i>' + icon('trend') + '</div><div><h2>Media Monitoring</h2><p>Pantau liputan, sentimen, dan tren dalam satu dashboard.</p></div></aside></main>';
+}
+function render() {
+  document.documentElement.classList.toggle('dark',state.dark);
+  if (!state.user) { app.innerHTML = login(); return; }
+  const sidebarShown = state.sidebar && ['topic','comparison'].includes(route.section);
+  const page = route.section === 'search' ? searchPage() : route.section === 'crisis' ? crisisPage() :
+    route.section === 'comparison' ? comparisonPage(route.page) : topicPage(route.name,route.page);
+  app.innerHTML = '<div class="shell' + (sidebarShown ? ' with-sidebar' : '') + '">' + leftRail() +
+    '<div class="workspace">' + topbar() + '<div class="workspace-body">' + (sidebarShown ? sidebar() : '') +
+    '<main id="main" class="main-content">' + heading() + page + '<footer>' + footerText() + '</footer></main></div></div></div>';
+}
+let overlayContext = null;
+let restoreFocus = null;
+let toastTimer;
+function notify(message) {
+  const node = document.querySelector('#toast');
+  node.textContent = message;
+  node.classList.add('visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => node.classList.remove('visible'),2600);
+}
+function closeOverlay() {
+  if (!overlayContext) return;
+  const prior = restoreFocus;
+  overlayContext = null;
+  restoreFocus = null;
+  overlay.innerHTML = '';
+  document.body.classList.remove('overlay-open');
+  prior?.focus();
+}
+function openOverlay(type, value = '') {
+  if (!overlayContext) restoreFocus = document.activeElement;
+  overlayContext = {type,value};
+  renderOverlay(true);
+}
+function formField(label, name, value = '', type = 'text', required = true) {
+  return '<label>' + e(label) + '<input type="' + type + '" name="' + name + '" value="' + e(value) + '"' + (required ? ' required' : '') + '></label>';
+}
+function formSelect(label, name, current, options) {
+  return '<label>' + e(label) + '<select name="' + name + '">' + options.map(value => '<option' + (value === current ? ' selected' : '') + '>' + e(value) + '</option>').join('') + '</select></label>';
+}
+const saveActions = (text = 'Save') => '<div class="form-actions">' + button('Cancel','close') + '<button class="btn primary">' + text + '</button></div>';
+function manageContent(kind) {
+  const entries = kind === 'topic' ? state.topics : state.comparisons;
+  return '<form class="stack-form" data-form="manage" data-kind="' + kind + '">' + formField(kind === 'topic' ? 'Nama topik atau keyword' : 'Nama perbandingan','name') +
+    '<button class="btn primary">' + icon('plus') + ' Add ' + (kind === 'topic' ? 'Topic' : 'Comparison') + '</button></form><div class="manage-list">' +
+    entries.map(name => '<div><span>' + e(name) + '</span><div class="row">' +
+      iconButton('Rename ' + name,'edit',kind === 'topic' ? 'renameTopic' : 'renameComparison',name) +
+      iconButton('Delete ' + name,'trash',kind === 'topic' ? 'removeTopic' : 'removeComparison',name) + '</div></div>').join('') + '</div>';
+}
+function bookmarkItems() {
+  const items = data.filter(item => Object.hasOwn(state.bookmarks,item.id) && (!state.bookmarkLabel || state.bookmarks[item.id] === state.bookmarkLabel) && match(item,state.bookmarkFind)).sort(articleOrder);
+  return items.length ? items.map(item => article(item,'saved')).join('') : empty('Belum ada artikel tersimpan di sini.');
+}
+function bookmarkContent() {
+  return '<div class="toolbar">' + button('Add','bookmarkAdd','','primary','plus') + iconButton('Search bookmarks','search','bookmarkSearch') + '</div>' +
+    (state.bookmarkSearch ? input('bookmarkFind',state.bookmarkFind,'Search bookmarks') : '') +
+    '<div class="chips">' + button('All Item ( ' + Object.keys(state.bookmarks).length + ' )','bookmarkLabel','','chip ' + (!state.bookmarkLabel ? 'selected' : '')) +
+    state.labels.map(label => button(label,'bookmarkLabel',label,'chip ' + (state.bookmarkLabel === label ? 'selected' : ''))).join('') +
+    '</div><div id="bookmarked-items">' + bookmarkItems() + '</div><div class="drawer-bottom">' + button('Saved Labels ' + state.labels.length,'manageLabels','','','gear') + '</div>';
+}
+function crisisForm(id) {
+  const crisis = state.crises.find(entry => entry.id === Number(id));
+  const starting = crisis || {name:'',start:'2026-11-18',end:'2026-12-18',frequency:'Every 1 Hour',recipients:'',source:'Media Online',impact:'Moderate Impact'};
+  return '<form class="stack-form" data-form="crisis" data-id="' + e(id) + '">' + formField('Crisis Name','name',starting.name) +
+    '<div class="form-grid">' + formField('Monitoring starts','start',starting.start,'date') + formField('Monitoring ends','end',starting.end,'date') + '</div>' +
+    '<div class="form-grid">' + formSelect('Source','source',starting.source,['Media Online','Media Sosial',...sources.slice(1)]) +
+    formSelect('Frequency','frequency',starting.frequency,['Every 1 Hour','Every 6 Hours','Every 24 Hours','3600 minutes']) + '</div>' +
+    formSelect('Status Impact','impact',starting.impact,['Low Impact','Moderate Impact','High Impact']) +
+    formField('Recipients','recipients',starting.recipients,'text',false) + saveActions(crisis ? 'Save changes' : 'Add Crisis') + '</form>';
+}
+function renderOverlay(focus = false) {
+  if (!overlayContext) return;
+  const {type,value} = overlayContext;
+  let title = '', body = '', drawer = false;
+  switch (type) {
+    case 'bookmarks': title = 'Bookmark'; body = bookmarkContent(); drawer = true; break;
+    case 'manageTopics': title = 'Manage Topics ' + state.topics.length; body = manageContent('topic'); drawer = true; break;
+    case 'manageComparison': title = 'Manage Comparison ' + state.comparisons.length; body = manageContent('comparison'); drawer = true; break;
+    case 'renameTopic':
+    case 'renameComparison':
+      title = type === 'renameTopic' ? 'Edit Topic' : 'Edit Comparison';
+      body = '<form class="stack-form" data-form="rename" data-kind="' + (type === 'renameTopic' ? 'topic' : 'comparison') + '" data-original="' + e(value) + '">' + formField('Name','name',value) + saveActions() + '</form>';
+      break;
+    case 'manageLabels':
+      title = 'Saved Labels ' + state.labels.length;
+      body = '<form class="stack-form" data-form="label">' + formField('Label name','name') + '<button class="btn primary">' + icon('plus') + ' Add Label</button></form><div class="manage-list">' +
+        state.labels.map(label => '<div><span>' + e(label) + '</span>' + iconButton('Delete ' + label,'trash','removeLabel',label) + '</div>').join('') + '</div>' + button('Back to Bookmark','bookmarks');
+      break;
+    case 'bookmarkAdd':
+      title = 'Add to Bookmark'; drawer = true;
+      body = '<p class="muted">Pilih artikel untuk disimpan.</p>' + input('addBookmarkFind',state.addBookmarkFind || '','Find an article') + '<div id="bookmark-candidates">' + bookmarkCandidates() + '</div>' + button('Back to Bookmark','bookmarks');
+      break;
+    case 'assignLabel':
+      title = 'Move to label';
+      body = '<div class="manage-list">' + ['',...state.labels].map(label => '<div>' + button(label || 'Without label','saveLabel',value + '|' + label) + '</div>').join('') + '</div>' + button('Manage Labels','manageLabels');
+      break;
+    case 'editCrisis': title = value ? 'Edit Crisis' : 'New Crisis'; body = crisisForm(value); break;
+    case 'deleteCrisis':
+      title = 'Delete Crisis'; body = '<p>Hapus “' + e(state.crises.find(crisis => crisis.id === Number(value))?.name) + '”?</p><div class="form-actions">' + button('Cancel','close') + button('Delete','confirmCrisis',value,'danger','trash') + '</div>'; break;
+    case 'filters':
+      title = 'Advanced Filters'; body = '<div class="stack-form">' + pick('channel',state.channel,[['','All Source'],...sources],'Source') +
+        pick('region',state.region,[['','All Region'],...regions],'Region') + '<div class="form-actions">' + button('Reset','clearAdvanced') + button('Done','close','','primary') + '</div></div>'; break;
+    case 'dates':
+      title = 'Set Time';
+      body = '<form class="stack-form" data-form="dates" data-kind="' + value + '"><div class="form-grid">' + formField('Start date','start',state[value + 'Start'],'date') +
+        formField('End date','end',state[value + 'End'],'date') + '</div>' + saveActions('Apply') + '</form>'; break;
+    case 'article': {
+      const item = data.find(item => item.id === Number(value));
+      if (!item) return closeOverlay();
+      title = 'Media Detail';
+      body = '<div class="detail"><p class="muted">' + e(item.source) + ' · ' + dayText(item.date,true) + '</p><h3>' + e(item.title) + '</h3><p>' + e(item.statement) + '</p><dl><dt>Sentiment</dt><dd>' + badge(item.sentiment,item.sentiment.toLowerCase()) +
+        '</dd><dt>Emotion</dt><dd>' + e(item.emotion) + '</dd><dt>Region</dt><dd>' + e(item.region) + '</dd><dt>Engagement</dt><dd>' + engText(item.engagement) + '</dd></dl><div class="chips">' +
+        item.keywords.map(term => badge(term)).join('') + '</div>' + button(Object.hasOwn(state.bookmarks,item.id) ? 'Remove Bookmark' : 'Bookmark Article','bookmark',item.id,'primary','bookmark') + '</div>'; break;
+    }
+    case 'products': title = 'Select Product'; drawer = true; body = '<button type="button" class="product-card" ' + action('home') + '>' + logo + '<strong>Media Monitoring</strong>' + icon('chevron') + '</button>'; break;
+    case 'account':
+      title = state.user; body = '<div class="account-menu">' + [
+        ['Your Account','Name, Avatar, Password','profile'],['Sentiment Sector','General','sector'],
+        ['Your Package Info','Enterprise Custom','package'],['Setting','Account Setting','settings']
+      ].map(([label,desc,target]) => '<button type="button" ' + action(target) + '><strong>' + label + '</strong><span>' + desc + '</span>' + icon('chevron') + '</button>').join('') + '</div>' + button('Logout','logout','','danger'); break;
+    case 'profile':
+    case 'settings':
+      title = type === 'profile' ? 'Your Account' : 'Account Setting'; body = '<form class="stack-form" data-form="profile">' +
+        formField('Name','name',state.profile.name || '', 'text',false) +
+        '<p class="muted">Avatar menggunakan inisial nama. Login demo menerima sandi apa pun.</p>' + saveActions() + '</form>'; break;
+    case 'sector': title = 'Sentiment Sector'; body = '<p>General</p>'; break;
+    case 'package': title = 'Your Package Info'; body = '<p>Enterprise Custom</p>'; break;
+    case 'language': title = 'Language'; body = '<div class="row">' + button('🇺🇸 English','chooseLanguage','US',state.language === 'US' ? 'selected' : '') +
+      button('🇮🇩 Indonesia','chooseLanguage','ID',state.language === 'ID' ? 'selected' : '') + '</div>'; break;
+    case 'notifications': title = 'Notifications'; body = crisisRows().filter(item => item.status === 'Active').map(item => '<p>' + badge(item.impact,'moderate') + ' ' + e(item.name) + '</p>').join('') || empty('Tidak ada peringatan aktif.'); break;
+    case 'downloads': title = 'Downloads'; body = '<div class="row">' + button('Media dataset CSV','mediaCSV','','','download') + button('Crisis report CSV','crisisCSV','','','download') + '</div>'; break;
+    case 'movementMenu': title = 'Data Movement'; body = button('Download CSV','movementCSV','','','download'); break;
+    case 'voiceMenu': title = brands[Number(value)]; body = button('Download CSV','voiceCSV',value,'','download'); break;
+    default: return;
+  }
+  document.body.classList.add('overlay-open');
+  overlay.innerHTML = '<div class="overlay-backdrop" ' + action('close') + '></div><section class="' + (drawer ? 'drawer' : 'modal') + '" role="dialog" aria-modal="true" aria-labelledby="overlay-title" tabindex="-1"><header><h2 id="overlay-title">' + e(title) + '</h2>' + iconButton('Close','close','close') + '</header><div class="overlay-content">' + body + '</div></section>';
+  if (focus) overlay.querySelector('section').focus();
+}
+function bookmarkCandidates() {
+  const items = data.filter(item => !Object.hasOwn(state.bookmarks,item.id) && match(item,state.addBookmarkFind || '')).sort(articleOrder).slice(0,12);
+  return items.length ? items.map(item => article(item)).join('') : empty();
+}
+
+function exportCSV(filename, header, rows) {
+  const cell = value => {
+    const text = String(value ?? '');
+    const numeric = /^-?\d+(?:[.,]\d+)?(?:% \(\d+\))?$/.test(text);
+    const safe = /^[\s]*[=+@-]|^[\t\r]/.test(text) && !numeric ? "'" + text : text;
+    return '"' + safe.replaceAll('"','""') + '"';
+  };
+  const csv = [header,...rows].map(row => row.map(cell).join(',')).join('\r\n');
+  const url = URL.createObjectURL(new Blob(['\uFEFF',csv],{type:'text/csv;charset=utf-8'}));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename + '.csv';
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url),1000);
+  notify('CSV siap diunduh.');
+}
+function saveState(key) { storage.set(key,state[key]); }
+function setField(field, value) {
+  state[field] = field === 'pageSize' ? Number(value) : value;
+  if (field.startsWith('news')) state.listPage = 1;
+  if (field.startsWith('crisis') || field === 'pageSize') state.crisisPage = 1;
+  if (field === 'entity' || field === 'regionTab') state.regionPage = 0;
+}
+function refreshOverlay() {
+  render();
+  renderOverlay();
+}
+function changePreset(scope,preset) {
+  if (preset === 'Set Time') { openOverlay('dates',scope); return; }
+  const end = allDates.at(-1);
+  const starts = {Today:end,'1 day':shiftISO(end,-1),'7 day':shiftISO(end,-6),'1 month':allDates[0]};
+  state[scope + 'Period'] = preset;
+  state[scope + 'Start'] = starts[preset];
+  state[scope + 'End'] = end;
+  state.crisisPage = 1;
+  render();
+}
+function updateBookmarks(id) {
+  const wasSaved = Object.hasOwn(state.bookmarks,id);
+  if (wasSaved) delete state.bookmarks[id];
+  else state.bookmarks[id] = '';
+  saveState('bookmarks');
+  refreshOverlay();
+  notify(wasSaved ? 'Artikel dihapus dari Bookmark.' : 'Artikel disimpan ke Bookmark.');
+}
+function removeSaved(kind,name) {
+  const key = kind === 'topic' ? 'topics' : 'comparisons';
+  state[key] = state[key].filter(entry => entry !== name);
+  saveState(key);
+  if (kind === 'topic') {
+    state.topicOpen.delete(name);
+    delete state.topicAliases[name];
+    saveState('topicAliases');
+  }
+  route = getRoute();
+  refreshOverlay();
+}
+const overlayActions = ['bookmarks','manageTopics','manageComparison','renameTopic','renameComparison','manageLabels','bookmarkAdd','assignLabel',
+  'editCrisis','deleteCrisis','filters','article','products','account','profile','settings','sector','package','language',
+  'notifications','downloads','movementMenu','voiceMenu'];
+document.addEventListener('click', event => {
+  const button = event.target.closest('[data-action]');
+  if (!button) return;
+  const {action: name,value} = button.dataset;
+  if (overlayActions.includes(name)) {
+    if (name === 'bookmarkAdd') state.addBookmarkFind = '';
+    openOverlay(name,value);
+    return;
+  }
+  const separator = value.indexOf('|');
+  const field = value.slice(0,separator), setting = value.slice(separator + 1);
+  switch (name) {
+    case 'close': closeOverlay(); break;
+    case 'set': setField(field,setting); render(); break;
+    case 'sidebar': {
+      if (!['topic','comparison'].includes(route.section)) {
+        state.sidebar = true; go('topic'); break;
+      }
+      state.sidebar = !state.sidebar; render(); break;
+    }
+    case 'topicFolder':
+      if (state.topicOpen.has(value)) state.topicOpen.delete(value);
+      else state.topicOpen.add(value);
+      render(); break;
+    case 'comparisonFolder':
+      if (value === route.name) { state.comparisonOpen = !state.comparisonOpen; render(); }
+      else { state.comparisonOpen = true; go('comparison',value,'Dashboard'); }
+      break;
+    case 'toggleExtraction': state.extraction = !state.extraction; render(); break;
+    case 'theme': state.dark = !state.dark; saveState('dark'); render(); break;
+    case 'home': go('topic',state.topics[0],'Overview'); break;
+    case 'demoLogin': state.user = 'demo@demo.id'; saveState('user'); render(); break;
+    case 'logout':
+      state.user = ''; saveState('user'); closeOverlay(); render(); break;
+    case 'chooseLanguage':
+      state.language = value; saveState('language'); closeOverlay(); render(); break;
+    case 'clearAdvanced': state.channel = ''; state.region = ''; refreshOverlay(); break;
+    case 'preset': changePreset(field,setting); break;
+    case 'listPage':
+    case 'crisisPage': state[name] = Number(value); render(); break;
+    case 'regionPage': state.regionPage = Number(value) - 1; render(); break;
+    case 'bookmark': updateBookmarks(value); break;
+    case 'bookmarkSearch':
+      state.bookmarkSearch = !state.bookmarkSearch;
+      if (!state.bookmarkSearch) state.bookmarkFind = '';
+      renderOverlay();
+      overlay.querySelector('[data-live="bookmarkFind"]')?.focus();
+      break;
+    case 'bookmarkLabel': state.bookmarkLabel = value; renderOverlay(); break;
+    case 'saveLabel':
+      state.bookmarks[field] = setting; saveState('bookmarks'); openOverlay('bookmarks'); break;
+    case 'removeLabel':
+      state.labels = state.labels.filter(label => label !== value);
+      Object.keys(state.bookmarks).forEach(id => { if (state.bookmarks[id] === value) state.bookmarks[id] = ''; });
+      if (state.bookmarkLabel === value) state.bookmarkLabel = '';
+      saveState('labels'); saveState('bookmarks'); renderOverlay(); break;
+    case 'removeTopic': removeSaved('topic',value); break;
+    case 'removeComparison': removeSaved('comparison',value); break;
+    case 'pauseCrisis':
+      state.crises = state.crises.map(crisis => crisis.id === Number(value) ? {...crisis,status:crisis.status === 'Paused' ? 'Active' : 'Paused'} : crisis);
+      saveState('crises'); render(); break;
+    case 'confirmCrisis':
+      state.crises = state.crises.filter(crisis => crisis.id !== Number(value));
+      saveState('crises'); closeOverlay(); render(); notify('Crisis dihapus.'); break;
+    case 'crisisCSV':
+      exportCSV('crisis-alert',crisisHeaders.slice(0,-1),crisisRows().map((crisis,i) => crisisValues(crisis,i+1))); break;
+    case 'mediaCSV':
+      exportCSV('media-monitoring',['Date','Source','Title','Sentiment','Emotion','Engagement','Person','Organization','Keyword','Region'],data.map(item => [
+        item.date,item.source,item.title,item.sentiment,item.emotion,item.engagement,item.person,item.organization,item.keywords.join('; '),item.region
+      ])); break;
+    case 'movementCSV': {
+      const range = topicRange();
+      const items = topicSource(route.name).filter(item => topicFilter(item,range));
+      const dates = allDates.filter(date => inRange({date},range));
+      const labels = state.based === 'Data Source' ? sources : savedDefaults.slice(1).concat(primary);
+      const movement = seriesFor(items,dates,labels,state.based === 'Data Source' ? 'channel' : 'topic',state.metric === 'Total Engagement' ? 'engagement' : '',palette,state.group);
+      exportCSV('data-movement',['Date',...labels],movement.labels.map((date,i) => [date,...movement.series.map(entry => entry.values[i])])); break;
+    }
+    case 'voiceCSV': {
+      const brand = brands[Number(value)];
+      const items = compItems().filter(item => item.brand === brand);
+      exportCSV('share-of-voice-' + brand.toLowerCase().replaceAll(' ','-'),['Entity','Total Data',...sentiments],[[brand,Math.round(compCount(items)),...compSentiments(items).map(value => perc(value,2))]]); break;
+    }
+  }
+});
+document.addEventListener('change',event => {
+  const field = event.target.dataset.field;
+  if (!field) return;
+  setField(field,event.target.value);
+  render();
+});
+document.addEventListener('input',event => {
+  const target = event.target;
+  if (target.id === 'search-term') {
+    document.querySelector('#search-counter').textContent = target.value.length + '/4000';
+    return;
+  }
+  const field = target.dataset.live;
+  if (!field) return;
+  setField(field,target.value);
+  switch(field) {
+    case 'sidebarSearch': document.querySelector('#side-folders').innerHTML = sidebarContents(); return;
+    case 'savedSearch': document.querySelector('#search-saved').innerHTML = searchSaved(); return;
+    case 'bookmarkFind': document.querySelector('#bookmarked-items').innerHTML = bookmarkItems(); return;
+    case 'addBookmarkFind': document.querySelector('#bookmark-candidates').innerHTML = bookmarkCandidates(); return;
+    case 'crisisFind': document.querySelector('#crisis-table').innerHTML = crisisTable(); return;
+    default: {
+      const cursor = target.selectionStart;
+      render();
+      const next = document.querySelector('[data-live="' + field + '"]');
+      next?.focus({preventScroll:true});
+      next?.setSelectionRange(cursor,cursor);
+    }
+  }
+});
+document.addEventListener('submit',event => {
+  const form = event.target;
+  const {form: type,kind,id,original} = form.dataset;
+  if (!type) return;
+  event.preventDefault();
+  const fields = Object.fromEntries(new FormData(form));
+  switch (type) {
+    case 'login':
+      state.user = fields.email.trim() || 'demo@demo.id';
+      saveState('user'); render(); break;
+    case 'search':
+      state.search = fields.term.trim(); state.searched = true; state.listPage = 1; render(); break;
+    case 'manage':
+    case 'rename': {
+      const name = fields.name.trim();
+      const key = kind === 'topic' ? 'topics' : 'comparisons';
+      if (!name || state[key].some(entry => entry !== original && entry.toLowerCase() === name.toLowerCase())) { notify('Masukkan nama yang unik.'); return; }
+      state[key] = type === 'manage' ? [...state[key],name] : state[key].map(entry => entry === original ? name : entry);
+      saveState(key);
+      if (type === 'rename') {
+        if (kind === 'topic' && name !== original) {
+          state.topicAliases[name] = state.topicAliases[original] || original;
+          delete state.topicAliases[original];
+          state.topicOpen.delete(original);
+          state.topicOpen.add(name);
+          saveState('topicAliases');
+        }
+        go(kind,name,route.page || (kind === 'topic' ? 'Overview' : 'Dashboard'));
+      }
+      else refreshOverlay();
+      break;
+    }
+    case 'label': {
+      const label = fields.name.trim();
+      if (!label || state.labels.some(entry => entry.toLowerCase() === label.toLowerCase())) { notify('Masukkan label yang unik.'); return; }
+      state.labels.push(label); saveState('labels'); renderOverlay(); break;
+    }
+    case 'dates':
+    case 'crisis':
+      if (fields.end < fields.start) { notify('Tanggal akhir harus sama atau setelah tanggal mulai.'); return; }
+      if (type === 'dates') {
+        state[kind + 'Start'] = fields.start; state[kind + 'End'] = fields.end; state[kind + 'Period'] = 'Set Time';
+        state.crisisPage = 1;
+      } else {
+        if (!fields.name.trim()) { notify('Masukkan nama crisis.'); return; }
+        fields.name = fields.name.trim();
+        if (id) state.crises = state.crises.map(crisis => crisis.id === Number(id) ? {...crisis,...fields} : crisis);
+        else state.crises = [{
+          id:Date.now(), detected:new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric'}).format(new Date()) +
+            ', ' + new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit'}).format(new Date()),
+          mentions:0, by:'manual', growth:'New, 0% (0)', status:'Active', ...fields
+        },...state.crises];
+        saveState('crises'); state.crisisPage = 1;
+      }
+      closeOverlay(); render(); break;
+    case 'profile':
+      state.profile = {name:fields.name.trim()};
+      saveState('profile'); closeOverlay(); render(); notify('Pengaturan akun demo disimpan.'); break;
+  }
+});
+document.addEventListener('keydown',event => {
+  if (!overlayContext) return;
+  if (event.key === 'Escape') closeOverlay();
+  if (event.key !== 'Tab') return;
+  const dialog = overlay.querySelector('[role="dialog"]');
+  const controls = [...dialog.querySelectorAll('button:not(:disabled),input,select,textarea,a[href]')];
+  if (!controls.length) return;
+  if (event.shiftKey && (document.activeElement === controls[0] || document.activeElement === dialog)) {
+    event.preventDefault(); controls.at(-1).focus();
+  } else if (!event.shiftKey && document.activeElement === controls.at(-1)) {
+    event.preventDefault(); controls[0].focus();
+  }
+});
+state.topicAliases = Object.assign(Object.create(null), storage.get('topicAliases', {}));
+if (route.section === 'topic' && route.name) state.topicOpen.add(route.name);
+state.extraction = extraPages.includes(route.page);
+state.compStart = allDates[0]; state.compEnd = allDates.at(-1);
+state.crisisStart = shiftISO(allDates.at(-1), -6); state.crisisEnd = allDates.at(-1);
+let liveMode = false, liveUpdatedAt = '';
+const footerText = () => liveMode ? 'Live — data realtime, diperbarui ' + liveUpdatedAt : 'Demo — data contoh';
+const engText = value => liveMode ? '—' : fmt(value);
+const crisisMentions = crisis => liveMode ? liveCrisisMentions(crisis) : crisis.mentions;
+function liveCrisisMentions(crisis) {
+  const words = crisis.id === 1 ? ['artha graha', 'jefri', 'andi buchari', 'benny', 'tokoh'] : crisis.id === 2 ? ['cs palsu', 'customer service palsu', 'penipuan', 'scam', 'palsu'] : crisis.name.toLowerCase().split(/[^a-z]+/).filter(w => w.length >= 4);
+  const hay = item => (item.title + ' ' + item.keywords.join(' ') + ' ' + item.topic).toLowerCase();
+  return data.filter(item => inRange(item, [allDates[0], allDates.at(-1)]) && words.some(w => hay(item).includes(w))).length;
+}
+function bootLive() {
+  if (typeof fetch !== 'function') return;
+  const fetchJSON = (url, ms) => Promise.race([fetch(url).then(res => { if (!res.ok) throw new Error('http ' + res.status); return res.json(); }), new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))]);
+  try {
+    const dataURL = new URL('data.json', location.href);
+    dataURL.searchParams.set('t', Date.now());
+    fetchJSON(dataURL, 8000).then(payload => {
+    const items = Array.isArray(payload) ? payload : payload.items;
+    if (!items || !items.length) return;
+    items.forEach(item => { item.comparisonWeight = 1; item.sentimentWeight = 1; });
+    data.length = 0; data.push(...items);
+    liveMode = true;
+    liveUpdatedAt = (payload.generated_at_wib || '').toString();
+    state.period = 'Last 30 days';
+    render();
+    }).catch(() => {});
+  } catch { /* tetap pakai data contoh */ }
+}
+render();
+bootLive();
+
+</script>
+</body>
+</html>
