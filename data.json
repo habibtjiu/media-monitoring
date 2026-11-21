@@ -1,7 +1,36 @@
 {
- "generated_at": "2026-11-21T01:43:35.083882+00:00",
- "generated_at_wib": "21 Nov 2026, 08:43 WIB",
+ "generated_at": "2026-11-21T08:46:02.797439+00:00",
+ "generated_at_wib": "21 Nov 2026, 15:45 WIB",
  "items": [
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-20",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "mb700db93a22b",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "seasonal"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5aZExFRDJyZDJIZW9OOWtYc3RZaTl2OWllQ29Zc1I5ejlkOHNMQ0d0dVdFeWpOMi1paVNnbVRscTZNd3d6bTlfRlFqUUdJT1ZYaHRnTmJzc1lCWnJSa1QzeEdab1hHZw?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Yahoo Finance UK",
+   "statement": "PT Bank Artha Graha Internasional Tbk (INPC.JK) Seasonal returns chart Yahoo Finance UK",
+   "title": "PT Bank Artha Graha Internasional Tbk (INPC.JK) Seasonal returns chart - Yahoo Finance UK",
+   "topic": "Bank Artha Graha Internasional"
+  },
   {
    "brand": "Allo Bank",
    "channel": "Media Online",
@@ -59,35 +88,6 @@
    "statement": "SeaBank Dorong Digitalisasi UMKM Lewat Tur Edukasi di Makassar Demokratis.co.id",
    "title": "SeaBank Dorong Digitalisasi UMKM Lewat Tur Edukasi di Makassar - Demokratis.co.id",
    "topic": "Edukasi dan Literasi keuangan Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Sea Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-17",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#SeaBank"
-   ],
-   "id": "m517430933576",
-   "keywords": [
-    "sea bank",
-    "pelaku",
-    "usaha",
-    "makassar"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQREMzejVpUTJwUTctOXFGNDNVaVBCMVNLbms3SFhBQVdYUlFxSEQwUXNkQ0tSV2UtYjc1MkJHN3B0NTVzaU5fSTBvTE5sQVJLc0x0Y2pCamoxQTFwcFlRVHpTZElSNXQ3YlktY0NWNzY5ZTlZbkNlYXhlcU5hOHVucTdFWVJhZG14Zzc4QTdqZEpwdEZCTDM4b1FNQTRYYzBWSm5TZ2lCZ2hOMk9PVnBDSWd1T0hnNXFYX1ZCVkpFanJaRzdfQ3VVN3dyZ0ZmSms5Mk5MQ005TzJJbzdIVkFnNVhmRdIB6AFBVV95cUxOcEZPN1lNYXJHRWhvQ2NaYlpfRGtLRHZSX0RQMk9faFQ2TVNqNmk1M2JFOVZoYVM2MUdNRi1vcUR5T2NZQjNJckoyV2Q5Y2NudG9IUXRqYUczQVdvQUlaY1RMT1FMQnd4a0hyVllSdUlHOVRZUm1nbWh4OE1helZEaXVuRjN1VVZkalN3bi1xdm9fSjg0QXlZVG55NGtDellFb3lVYWVBekNWcWotbkpvWkQ2UTRqQW82aWlVZVBUYk9yQl9Db0NKemRJUEpBLXVESHgxX0t4RmR6M2Ztd2ZBd2lWcHBFYThq?oc=5",
-   "organization": "Sea Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "SINDOnews Ekbis",
-   "statement": "Pelaku Usaha Makassar Pertajam Strategi Smart Selling dan Branding Bersama UMKM Pintar SeaBank SINDOnews Ekbis",
-   "title": "Pelaku Usaha Makassar Pertajam Strategi Smart Selling dan Branding Bersama UMKM Pintar SeaBank - SINDOnews Ekbis",
-   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Allo Bank",
@@ -157,23 +157,23 @@
    "hashtags": [
     "#SeaBank"
    ],
-   "id": "mf1f181b08345",
+   "id": "m582e26610bbb",
    "keywords": [
     "sea bank",
-    "seabank",
-    "gelar",
-    "finance"
+    "kinerja",
+    "kuartal",
+    "seabank"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNzVZaDNNNnlwY3RLRG9FUE85ckc1Q3dhR3pSQUN4Z3RWdWdCdWpfbDlZcFhLRlNURHdFVlFqMUJWeU5nLWJCWUd2bDhyNzV2cERvcFVUelZSQVJhdTNBMHptdmtLaVJnX2p2U3daS2NHRllBYW1od3d6LUxyaDlpNHlSbkxSNzc0dzZDSUlwQUxhbFFIUkFjNmpKNWtRSDRYRm5vX29mVnlBdUQxYnUwRDVXdkhTeWl0Ty1YQ1JBNWVvcHpQWjRKWnk0cHRPRGpDZVI2Yg?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZmI3ZXAwN1htVnVpTDF4Uml5UVloZ0lQTV9yZTB6czRZOFVTMXpsaVVnOXFTb0FHR3dQaFVwYkZ4dWpwV1R2eVlpNGRtQlcxdFlRY0l2cDlqcEprMXB0Skt4a1NVd2c1OG41M3U3NkVZcTBDUU52Q19ib1VEcG9PNTNTRGh6ejdfYXRsdWRXMzMwam1ta3pKSXFBMlF4bkVYMXFjejVvaW9FcVloQWlqUFFaZ2s1YWZDZFpWeEpKdC03ZnJzQ3RpM1pDbkhaV0lQ?oc=5",
    "organization": "Sea Bank",
    "person": "",
    "region": "Nasional",
-   "sentiment": "Neutral",
+   "sentiment": "Positive",
    "sentimentWeight": 1,
-   "source": "Tribunjakarta.com",
-   "statement": "SeaBank Gelar UMKM Digital Finance Tour di Makassar, Pelaku Usaha Dibekali Strategi Smart Selling Tribunjakarta.com",
-   "title": "SeaBank Gelar UMKM Digital Finance Tour di Makassar, Pelaku Usaha Dibekali Strategi Smart Selling - Tribunjakarta.com",
+   "source": "DataIndonesia.id",
+   "statement": "Kinerja 14 Bank Digital Kuartal III/2026 : Seabank Pimpin Laba, NII Krom Bank Tumbuh Paling Pesat DataIndonesia.id",
+   "title": "Kinerja 14 Bank Digital Kuartal III/2026 : Seabank Pimpin Laba, NII Krom Bank Tumbuh Paling Pesat - DataIndonesia.id",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -264,62 +264,62 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
-   "brand": "Bank Saqu",
+   "brand": "Sea Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
    "date": "2026-11-14",
-   "emotion": "Trust",
+   "emotion": "Fear",
    "engagement": 0,
    "hashtags": [
-    "#BankSaqu"
+    "#SeaBank"
    ],
-   "id": "mff4c9b28be79",
+   "id": "meeca45295d4c",
    "keywords": [
-    "bank saqu",
-    "astra",
-    "daihatsu",
-    "umumkan"
+    "sea bank",
+    "pasang",
+    "badan",
+    "hadapi"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeTh6RUlZYjVQN3ZkbVhlY1R1a29FUUZxMExyM0RaVTBORDg3LUk0NTB4ZWhJZXBjTndYUEMzOE1yYjVsNWN2VVFsNmYyN1AwajRhYWZKcC1tMDEwU0NfZDBQMURST3ZQc05UY3hMQ05KYU5iTEZfbTFEOGt1ZHZrek9jZDZITWc?oc=5",
-   "organization": "Bank Saqu",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQYjNZNXlsWENlU3ViSFdxa2s1Rk9yejVyX3BickdGaHlQNVpKLWRhM1EwME56UGRveU90SUFyVE5aQzlWcV9qVnVuTWszWGFWQzZIc1ZQcDlJc2N4SDcwUVIxY1RLanRvY2ljMW41T3FqYi1ZbE1CeXNkYzdJczhxanZaU2MzVXg1UEE?oc=5",
+   "organization": "Sea Bank",
    "person": "",
    "region": "Nasional",
-   "sentiment": "Neutral",
+   "sentiment": "Positive",
    "sentimentWeight": 1,
-   "source": "gadget.qoo10.co.id",
-   "statement": "Astra Daihatsu Umumkan Pemenang Gebyar Merdeka 2026 dan 129 Hadiah gadget.qoo10.co.id",
-   "title": "Astra Daihatsu Umumkan Pemenang Gebyar Merdeka 2026 dan 129 Hadiah - gadget.qoo10.co.id",
+   "source": "Infobanknews",
+   "statement": "Bank RI Pasang Badan Hadapi Ancaman Serangan Siber Global Infobanknews",
+   "title": "Bank RI Pasang Badan Hadapi Ancaman Serangan Siber Global - Infobanknews",
    "topic": "Bank Artha Graha Internasional"
   },
   {
-   "brand": "Bank Saqu",
+   "brand": "Artha Graha",
    "channel": "Media Online",
    "comparisonWeight": 1,
-   "date": "2026-11-14",
+   "date": "2026-11-13",
    "emotion": "Trust",
    "engagement": 0,
    "hashtags": [
-    "#BankSaqu"
+    "#BankArthaGraha"
    ],
-   "id": "m7eeb85ec7ac7",
+   "id": "md772b2fd5652",
    "keywords": [
-    "bank saqu",
-    "astra",
-    "daihatsu",
-    "umumkan"
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "wujud"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1yVkVZcTR3dDRWbG13VGFYdWI1cl9RRG14UFR4dm0zeFNIc0tXSXZ3OFkycjlOZzFvdS1RR0FfUW84LWR1Zzl1NFJZcmFiWlZLYzF4V285RzVRYmkwWnlpaWlvd2hZMXdRNFNuQkNwMmM?oc=5",
-   "organization": "Bank Saqu",
-   "person": "",
+   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSGhFanl6TkRCY040bGhPVHpXYzd1U3JzTGdqUUVtNllKSUt5NFdQdlJISjlGTWNhcGhHVVZiMTk2MldTOHNVSTJEZS1Ka01sM3NDSFJqT2Nna3Jkd0lQNnZQM19kXzlwUGhBdzFMV0lUeTJOeTExcG15eUJHc0FjQ2pYdEJkdTEzY05ncjAxVUF6YlV4YThlTms0ODlFejJ1cjVwSldORDNsblVnTU9XLVo2NGdxdFBqbktyM0RueEd3RHVkOERsTA?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "Tomy Winata",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "Lensa Hukum",
-   "statement": "Astra Daihatsu Umumkan Pemenang Gebyar Merdeka 2026 Lensa Hukum",
-   "title": "Astra Daihatsu Umumkan Pemenang Gebyar Merdeka 2026 - Lensa Hukum",
-   "topic": "Bank Artha Graha Internasional"
+   "source": "Kompas.com",
+   "statement": "Tomy Winata menyoroti Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com.",
+   "title": "Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com",
+   "topic": "(CSSR) Artha Graha Peduli - BAGI"
   },
   {
    "brand": "Sea Bank",
@@ -331,53 +331,53 @@
    "hashtags": [
     "#SeaBank"
    ],
-   "id": "m1eade2432600",
+   "id": "m14e7ef8cf657",
    "keywords": [
     "sea bank",
+    "pintar",
     "seabank",
-    "dorong",
-    "makassar"
+    "perkuat"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMlk0djF2cVNHY0d2UmhhTDNDRU9SNFZ3bHJYcmhmc2NUWUxWcDItWTYwMkRtSTF0dVpyOGFCQmdMaXlad29uTmtaemhhYkphbU9rUm13M3gwQW5yVlNpb1d2TVBGcDVIZHRCOGs4em9obm5GZC02R0lnRjFuOWZPdlVRTlFDclhSbXB1X3k3RE9YbnJTc09WUWFKZHVVY0xLRUtIRGNRQnZGT21pSXFqMkZHMWNPbjBkbGc?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQVWxYS0pnQmJ1YWJkMEdrQ3RoWUdtNURkQ1NlYkVDc0NYbk5IZnFGVDhrQURsdDhjclVKenFrRnhGbTY2aUVRLWtMeGtmRVk2RkwtWFJLWXFvU3hWalNWZnNpUDduSHJLMm1wZnBrbmtTd1Y1TndlRFhSR2hxbzJaT2lDczNYNk1mZWNuUg?oc=5",
    "organization": "Sea Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Positive",
    "sentimentWeight": 1,
-   "source": "TIMES Indonesia",
-   "statement": "SeaBank Dorong UMKM Makassar Naik Kelas Lewat Platform Digital UMKM Pintar TIMES Indonesia",
-   "title": "SeaBank Dorong UMKM Makassar Naik Kelas Lewat Platform Digital UMKM Pintar - TIMES Indonesia",
+   "source": "Tirto.id",
+   "statement": "UMKM Pintar SeaBank Perkuat Fondasi Usaha Pelaku UMKM Makassar Tirto.id",
+   "title": "UMKM Pintar SeaBank Perkuat Fondasi Usaha Pelaku UMKM Makassar - Tirto.id",
    "topic": "Bank Artha Graha Internasional"
   },
   {
-   "brand": "Sea Bank",
+   "brand": "Allo Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
    "date": "2026-11-13",
    "emotion": "Trust",
    "engagement": 0,
    "hashtags": [
-    "#SeaBank"
+    "#AlloBank"
    ],
-   "id": "m3d6cd072bc59",
+   "id": "m480ddfff452f",
    "keywords": [
-    "sea bank",
-    "seabank",
-    "bidik",
-    "pelaku"
+    "allo bank",
+    "konglomerat",
+    "tertekan",
+    "biaya"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPU2h6OEFYMHN0RXdxakVIa0RQdmg3Skx2ZW1VanFBbkZxdU5EQ0VLLXYweGJySUtEQ3EweHNQOE5SZXN5RWVDU2J1RkgxRlc2QVkxdHNyMlhBM09MbDJpVmVnWFpJdllrZ1FKNWZ6bzByNVdvS1VuTUQ1NEhMTnFOVDBNS1pCX1U4WlAzMkN5RVVFdUY2bWhHelcwWnhHLXFnSkU5ZkwzVGFEMFBfeHVN0gG0AUFVX3lxTE9iS29wbjduTkY2RDFNWmI4Q0kzdzV3cmNrU2RNTkhrNzYtTmo1OV9CM3hyVS1ucWoyT2tXM01QYXE2bVRKcmxJX19HU1lJRzlpUjR2NzNMQkJWaEVJUnZ2NklES2IxQjFkWDVaMmRud2RkY3N3ZEtRSjRJUGFfd29lOTVINWhSWjZWVzc4TU0xTDBITUp3SDFrUDc0Z1E3S1ZVT2VDYkZXZUJ5Tkdsa3RVdVZZcA?oc=5",
-   "organization": "Sea Bank",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB1Rm5UWEIwRExFbGhVSHdpRzRveTgwUnJnVFYzOUU0RmItNk5ONU4tbmhsWWd0WTh3VG1Mbm5qMmtmQ3hiclhxNGRaYVpjMlFsQ1Y3UjVXNFZWeVZXVU96Q21saHQ0S3laZGUwdHd1aWY?oc=5",
+   "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Positive",
    "sentimentWeight": 1,
-   "source": "Warta Ekonomi",
-   "statement": "SeaBank Bidik 50 Juta Pelaku UMKM, Perkuat Digitalisasi Lewat UMKM Pintar Warta Ekonomi",
-   "title": "SeaBank Bidik 50 Juta Pelaku UMKM, Perkuat Digitalisasi Lewat UMKM Pintar - Warta Ekonomi",
-   "topic": "Program Digital Banking"
+   "source": "SuaraGarut.ID",
+   "statement": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 SuaraGarut.ID",
+   "title": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 - SuaraGarut.ID",
+   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Artha Graha",
@@ -447,23 +447,23 @@
    "hashtags": [
     "#BankArthaGraha"
    ],
-   "id": "m313f26347c93",
+   "id": "m400c35ee133e",
    "keywords": [
     "bank artha graha internasional",
     "bank artha graha",
     "artha graha",
-    "wujud"
+    "founder"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0JSMFFoZXp4MmZydURtLU90VVlfRTFvbjNKMlcydkNPY3pDQS1QLTh3SVRYTWJCRG1CcGYxUEJlcGJvSUNOcjFjUmZZTW5iSWNPN3oyTi1sWkxXMXRodEF1aFZXX2JuQnJTeUx0VVhVbjBrZEhKeWRKdGZVWTV2SjFtMmZqTkNObk9uNmlhWGQwNG9L?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSnJTblAxcHY5bWNGZW4waDFwSFdIbmhmR1BIM0dMY2FmMmZGQURJOE5MT3FOSlloWEpFLV93TUF6MWlLUzBNWDdlMnRXdjV5NlhfaDd0dFNoc04zM3hyQ19nd1NacnJyNzdWMEp0aGVQYi1wUGs2WVEwbWZKRUNCSzJwc3RKcFRPbTM3SkptNWE1MmVGVmM3SDVYRmE4S280T2RoeGVMaGZnY3ROM3EtdlJ5cy1ZZlZmOFVzbDlWcUE4amvSAcgBQVVfeXFMTS1ZSkRPT0J4QzR0bEV6V0FiUmFET0Z1V18xMnctUWhtN2M1Q3puekd2VzB5YV96U0gtOFhHREc0S3oydFM4Yy1aNkluUUNmSXJFaTdpSHNyME5IeHNxZzh6UVBxSFFZNktQVWdoWE9SaXNYa0F5ck41THFzcl9hOHhwaVhGajZrM2l4eHRTbW9QQXZCS29TeVA1Y2tBaFIwdDA3emhXZWt0OFVMOWZBdnBSaTZUMmR6eTVOcm5WSGlfSTlxN0owS3g?oc=5",
    "organization": "Bank Artha Graha Internasional",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "indoposco.id",
-   "statement": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda indoposco.id",
-   "title": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda - indoposco.id",
+   "source": "ANTARA News Megapolitan",
+   "statement": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda ANTARA News Megapolitan",
+   "title": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda - ANTARA News Megapolitan",
    "topic": "(CSSR) Artha Graha Peduli - BAGI"
   },
   {
@@ -522,7 +522,7 @@
    "source": "republika.co.id",
    "statement": "Tomy Winata menyoroti Yuliana Winata, Ibu dari Pengusaha Tomy Winata Meninggal Dunia di Usia 99 Tahun - republika.co.id.",
    "title": "Yuliana Winata, Ibu dari Pengusaha Tomy Winata Meninggal Dunia di Usia 99 Tahun - republika.co.id",
-   "topic": "(CSSR) Artha Graha Peduli - BAGI"
+   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Artha Graha",
@@ -552,6 +552,122 @@
    "statement": "Artha Graha Dukung Pasar Wiwitan SCBD, Hadirkan UMKM hingga Inovator Kampus Kompas.com",
    "title": "Artha Graha Dukung Pasar Wiwitan SCBD, Hadirkan UMKM hingga Inovator Kampus - Kompas.com",
    "topic": "The Local Market ID Pasar Wiwitan SCBD"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-10",
+   "emotion": "Joy",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "m2815d1fafc2d",
+   "keywords": [
+    "sea bank",
+    "video",
+    "seabank",
+    "penghargaan"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNTFRdEI1THQyZmxXYkFRZmxpTFlQUU5ROEhEdFdhZlRiU0FGN3NoSC1RN2VRSlYzNEtKTXJZcmdrSDl2NWU1dzZWclBORkQycldaeXlZb1ZuYXdlY2V4SnNNU1hBeG4zZmtPMkYyQV9NOWhFdTNzRzVBY3U4Z2UzVTVLcUsxT09YOERPdHFhUURxbWJsdjRGaU5sWWdMNE1qSGs0Vnk3Y3F4UG9zQllvVHU4TVJTLVB5WnlYQTd3NGR3MmpheFE?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "CNBC Indonesia",
+   "statement": "Video: SeaBank Raih Penghargaan \"Excellence in Financial Inclusion\" CNBC Indonesia",
+   "title": "Video: SeaBank Raih Penghargaan \"Excellence in Financial Inclusion\" - CNBC Indonesia",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-10",
+   "emotion": "Joy",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "m4f9e4f02fbf1",
+   "keywords": [
+    "sea bank",
+    "seabank",
+    "excellence",
+    "financial"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYm9IVFpJYXZ6c05tM0ViTU9XbzY5OC1NazJTR1ItTXExTklCajFiWHhmSUVEXzhFcjRLaEZDM2xzYlctWkt4aXBHaGlTeHd4RTBxZ29RZTZlZUNlN0pfcWJHTjI2WGVnNUx4cHBtOHZleEF4YktWY0wzdEtVY1BsQ1o0MDZzclFKR0h1cjlpSldMWXhZb0R2ZTZWd2RTclk3MEpIVE9BZTRaaU1KYWd0cXBDdjVWT0hyeWfSAb8BQVVfeXFMTURIZFVLZUlsMkpsWkJUVWdwU0lsQkhoZjZqemEyVktVNk5ENXc2N2ZoamZZbmtmeC0zOHRmeDBHWkhaV0JhQnE4OWZIU01QZ2FYRFVqcjNtSnRxZEZiQ2dJY2tCd1d2YUFXZ0dBcHZTS2RlS2pTb2ZRbG9NcmZoZldtcTJhOXp1bXRNVWljcHQ0ZHRpX3dyMUI1TGhLaW85cjJFS2E0MVRkTEN6YUVQMUtrX2VkRmxXTFhvMEZvSjg?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "CNBC Indonesia",
+   "statement": "Top! SeaBank Raih Excellence in Financial Inclusion Award CNBC Indonesia",
+   "title": "Top! SeaBank Raih Excellence in Financial Inclusion Award - CNBC Indonesia",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-09",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "mdffe0fd3c785",
+   "keywords": [
+    "sea bank",
+    "kuartal",
+    "seabank",
+    "ungguli"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUi13Y29NTkdvcTgzZFA1Q28tZ01iRTV6YklDTWo0S0hzemNYT2xoQU9pLXQxTFBhYWVVd2txNmpZNFVnYjd2X0RoVXdqSmFkYlVVYnhZWlRKeXd3UTZiRVc3SXE0Y1FWQldvcnNjY1JCNm9sTjhkWHZOVmc5SlluTFRCVzlzNDBiSjVNbC1NUm5aRHVHMFJObTlZSTZXRDBvbzNGOFd4dG4tclR5Q1I4Vl9FcFFib2kxRFRuREtWWDE?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "DataIndonesia",
+   "statement": "Laba Bank Digital Kuartal III/2026: Seabank Ungguli Superbank (SUPA), Bank Jago (ARTO) Cs DataIndonesia",
+   "title": "Laba Bank Digital Kuartal III/2026: Seabank Ungguli Superbank (SUPA), Bank Jago (ARTO) Cs - DataIndonesia",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-05",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "meade3b91602e",
+   "keywords": [
+    "sea bank",
+    "seabank",
+    "bukukan",
+    "triliun"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQzhWOFVkQXZiMW9jYnhGM0VWcFhGS1o0VXJYMUY3NlhhSUxsNXlXY3NseVd3ZHMyVkNZTVZZeWpkTjE1ZWVCd3lkdW1icGQtY1pwWGtyT1RLcVVpLWc5bUVWUlB5cEQ3emh3MlU1YmVYZUhRaEhvQjgyU29KQTBfUDA2MEl4bnlUZFVXVDdXVF84M3lsdEhXX3Zuaw?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "patrolihukumindonesia.com",
+   "statement": "SeaBank Bukukan Laba Rp1,11 Triliun dalam Sembilan Bulan 2026 patrolihukumindonesia.com",
+   "title": "SeaBank Bukukan Laba Rp1,11 Triliun dalam Sembilan Bulan 2026 - patrolihukumindonesia.com",
+   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Sea Bank",
@@ -592,7 +708,7 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "ma527e78612c7",
+   "id": "mf3f090500bba",
    "keywords": [
     "allo bank",
     "bersih",
@@ -600,7 +716,7 @@
     "hingga"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9UN015U2FCd2ZWOUs0QWtlcXNfcUphWHNQMFFDODRFUV9mT2MwZFFxTXFUX1J3UzI0cmxRTkJnc29QTVRiODBnUDNLb2NYdnRRZVQwdlNSbm9IRjlXaXNHeHYwLV91QQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5LOVM5b3BJT0pDX2dBWXVKeGxrR2RVSm1lY0Z4YndaVkc0T0JkSEs0VXRMNnIxN0tfSS1tWG92SVVoYmp4LTN0bjEtTVNxUEp2cFM2Vm1lMEx5RlVrN202Tm1HdmE2Zw?oc=5",
    "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
@@ -612,32 +728,32 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
-   "brand": "Bank Saqu",
+   "brand": "Sea Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
    "date": "2026-10-29",
    "emotion": "Trust",
    "engagement": 0,
    "hashtags": [
-    "#BankSaqu"
+    "#SeaBank"
    ],
-   "id": "m4365694cfa5f",
+   "id": "m3a1f551a3725",
    "keywords": [
-    "bank saqu",
-    "bidik",
-    "peluang",
-    "bisnis"
+    "sea bank",
+    "seabank",
+    "announces",
+    "sustainable"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeXZ6X0NzNkRNbkF3eHAxaDVFa3NDbVRkWjR6VlFxLXN5RF9DWXpra0xTcFNCcHByQklCSkh4MlpMWVBSWDN4dmRCams2UzdXMDgzUnI0QTZ3UUxPNVhfNjdrdVh3aDhkVVdwU3UyRGVneGVpYWVyajdSd0lzbFp6NDh5cGN0VnVJNzA4SnpselVSWVRIaEFNSFhoclFGV0hQSVpYUXlDWmFXNnR0aGc5MHNJNWdtUzUtUUpFcEVoN2NMN2FRYWhBMDI5NU1IV3h4aS1ZR09R?oc=5",
-   "organization": "Bank Saqu",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOV2JsZmthYWFFX2hRMTl6WFNDclZHdk9oNjVBZjVmUnFMZGx5c3FVUWYxWm5tdVpQbW1mU2FwZkRQUWl1akVQZVRnRmwxRmhQTkdzMUFWZ3c5MmQtNmxmR3NjMkhqcWZ0dnVCTk95djAzWTF6cjFmY0xFN3VRbHVadnVVaTR3Q3BiUHNFcTRobjNhSGM?oc=5",
+   "organization": "Sea Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "Pasardana",
-   "statement": "Bank Saqu Bidik Peluang Bisnis Solopreneur, Hadirkan Buyer hingga Investor dalam The Founders Club 2026 Pasardana",
-   "title": "Bank Saqu Bidik Peluang Bisnis Solopreneur, Hadirkan Buyer hingga Investor dalam The Founders Club 2026 - Pasardana",
+   "source": "MonitorRiau.com",
+   "statement": "SeABank announces Sustainable Finance Framework MonitorRiau.com",
+   "title": "SeABank announces Sustainable Finance Framework - MonitorRiau.com",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -699,6 +815,35 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-23",
+   "emotion": "Joy",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "mc0a18dd9b1b2",
+   "keywords": [
+    "sea bank",
+    "perkuat",
+    "manajemen",
+    "risiko"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNV3hJUnhob05VQlRlTWxTOUhaV1BFQzZ5TTgyQ0IwMFlMeDFPTUFUUjUxeVlnaEdUWnpqUkcwX0pwQTJCZFVaMEtJb29kYlpKcE90QnBPR2NHaWJLdUhGS3lPZHo0ZG1LTjBUTnczdkhrWFdpQkJGRzRGQXBRc3VmVUJmdlVnRVlmRDVxUzZWWWUxMEZFbE13Wkh6RWtqbHE5MC1KOVJYbUhfaFppT0hRd1FKYw?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "Infobanknews",
+   "statement": "Perkuat Manajemen Risiko, SeaBank Raih Dua Penghargaan Top 20 Financial Institutions 2026 Infobanknews",
+   "title": "Perkuat Manajemen Risiko, SeaBank Raih Dua Penghargaan Top 20 Financial Institutions 2026 - Infobanknews",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
    "brand": "Allo Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
@@ -725,6 +870,35 @@
    "source": "kontan.co.id",
    "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit kontan.co.id",
    "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - kontan.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-22",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m0e35cf4c7bc1",
+   "keywords": [
+    "allo bank",
+    "bidik",
+    "hingga",
+    "akhir"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBCRE1uZnQ0ZDVuZDNMY09EbHR1Tk1WamFQMzVuSjR4WXExbm1VZVIwaG5EVWVzMnhDMFJOb3QwZjhQc1pnRnJhUVNoZDBZVXZKUXlCdjBiNUZXWHVySG40VVFsSHh0Zw?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "TradingView",
+   "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit TradingView",
+   "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - TradingView",
    "topic": "Bank Artha Graha Internasional"
   }
  ]
