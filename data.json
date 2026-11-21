@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-21T08:46:02.797439+00:00",
- "generated_at_wib": "21 Nov 2026, 15:45 WIB",
+ "generated_at": "2026-11-21T16:27:59.242259+00:00",
+ "generated_at_wib": "21 Nov 2026, 23:27 WIB",
  "items": [
   {
    "brand": "Artha Graha",
@@ -293,35 +293,6 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
-   "brand": "Artha Graha",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-13",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#BankArthaGraha"
-   ],
-   "id": "md772b2fd5652",
-   "keywords": [
-    "bank artha graha internasional",
-    "bank artha graha",
-    "artha graha",
-    "wujud"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSGhFanl6TkRCY040bGhPVHpXYzd1U3JzTGdqUUVtNllKSUt5NFdQdlJISjlGTWNhcGhHVVZiMTk2MldTOHNVSTJEZS1Ka01sM3NDSFJqT2Nna3Jkd0lQNnZQM19kXzlwUGhBdzFMV0lUeTJOeTExcG15eUJHc0FjQ2pYdEJkdTEzY05ncjAxVUF6YlV4YThlTms0ODlFejJ1cjVwSldORDNsblVnTU9XLVo2NGdxdFBqbktyM0RueEd3RHVkOERsTA?oc=5",
-   "organization": "Bank Artha Graha Internasional",
-   "person": "Tomy Winata",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "Kompas.com",
-   "statement": "Tomy Winata menyoroti Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com.",
-   "title": "Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com",
-   "topic": "(CSSR) Artha Graha Peduli - BAGI"
-  },
-  {
    "brand": "Sea Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
@@ -349,6 +320,64 @@
    "statement": "UMKM Pintar SeaBank Perkuat Fondasi Usaha Pelaku UMKM Makassar Tirto.id",
    "title": "UMKM Pintar SeaBank Perkuat Fondasi Usaha Pelaku UMKM Makassar - Tirto.id",
    "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-13",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "m1eade2432600",
+   "keywords": [
+    "sea bank",
+    "seabank",
+    "dorong",
+    "makassar"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMlk0djF2cVNHY0d2UmhhTDNDRU9SNFZ3bHJYcmhmc2NUWUxWcDItWTYwMkRtSTF0dVpyOGFCQmdMaXlad29uTmtaemhhYkphbU9rUm13M3gwQW5yVlNpb1d2TVBGcDVIZHRCOGs4em9obm5GZC02R0lnRjFuOWZPdlVRTlFDclhSbXB1X3k3RE9YbnJTc09WUWFKZHVVY0xLRUtIRGNRQnZGT21pSXFqMkZHMWNPbjBkbGc?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "TIMES Indonesia",
+   "statement": "SeaBank Dorong UMKM Makassar Naik Kelas Lewat Platform Digital UMKM Pintar TIMES Indonesia",
+   "title": "SeaBank Dorong UMKM Makassar Naik Kelas Lewat Platform Digital UMKM Pintar - TIMES Indonesia",
+   "topic": "Program Digital Banking"
+  },
+  {
+   "brand": "Sea Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-13",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#SeaBank"
+   ],
+   "id": "mc27da9e465ca",
+   "keywords": [
+    "sea bank",
+    "pelaku",
+    "makassar",
+    "perkuat"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMm1hOTNZWTRUS0sxbTBnVTNVZDh2TFNjQTM0T3I3aWs1SWFNSl9nUXBvVUJoMjI3M0laOVhUTDVLRV9TZ2lkZlhhYkJtOXR5dHdXRTFLZEpabVRWYXRNQmpGcmxPTm9mOE9wOWQ1OEJWdDZ3TjJuVWxsMm93Tk1IWFlKMW82eE9TcnFKR0kxTklNM0M0SXU5LWNwam9sa3NmZlZhZlNPZ2RLTDN4YTBmRmV0ZEpfYXNUWDZ5R0xSR3RNZw?oc=5",
+   "organization": "Sea Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "Terkini.id",
+   "statement": "Pelaku UMKM Makassar Perkuat Fondasi Usaha Lewat Solusi Digital Melalui UMKM Pintar SeaBank Terkini.id",
+   "title": "Pelaku UMKM Makassar Perkuat Fondasi Usaha Lewat Solusi Digital Melalui UMKM Pintar SeaBank - Terkini.id",
+   "topic": "Program Digital Banking"
   },
   {
    "brand": "Allo Bank",
@@ -447,23 +476,23 @@
    "hashtags": [
     "#BankArthaGraha"
    ],
-   "id": "m400c35ee133e",
+   "id": "m313f26347c93",
    "keywords": [
     "bank artha graha internasional",
     "bank artha graha",
     "artha graha",
-    "founder"
+    "wujud"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSnJTblAxcHY5bWNGZW4waDFwSFdIbmhmR1BIM0dMY2FmMmZGQURJOE5MT3FOSlloWEpFLV93TUF6MWlLUzBNWDdlMnRXdjV5NlhfaDd0dFNoc04zM3hyQ19nd1NacnJyNzdWMEp0aGVQYi1wUGs2WVEwbWZKRUNCSzJwc3RKcFRPbTM3SkptNWE1MmVGVmM3SDVYRmE4S280T2RoeGVMaGZnY3ROM3EtdlJ5cy1ZZlZmOFVzbDlWcUE4amvSAcgBQVVfeXFMTS1ZSkRPT0J4QzR0bEV6V0FiUmFET0Z1V18xMnctUWhtN2M1Q3puekd2VzB5YV96U0gtOFhHREc0S3oydFM4Yy1aNkluUUNmSXJFaTdpSHNyME5IeHNxZzh6UVBxSFFZNktQVWdoWE9SaXNYa0F5ck41THFzcl9hOHhwaVhGajZrM2l4eHRTbW9QQXZCS29TeVA1Y2tBaFIwdDA3emhXZWt0OFVMOWZBdnBSaTZUMmR6eTVOcm5WSGlfSTlxN0owS3g?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0JSMFFoZXp4MmZydURtLU90VVlfRTFvbjNKMlcydkNPY3pDQS1QLTh3SVRYTWJCRG1CcGYxUEJlcGJvSUNOcjFjUmZZTW5iSWNPN3oyTi1sWkxXMXRodEF1aFZXX2JuQnJTeUx0VVhVbjBrZEhKeWRKdGZVWTV2SjFtMmZqTkNObk9uNmlhWGQwNG9L?oc=5",
    "organization": "Bank Artha Graha Internasional",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "ANTARA News Megapolitan",
-   "statement": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda ANTARA News Megapolitan",
-   "title": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda - ANTARA News Megapolitan",
+   "source": "indoposco.id",
+   "statement": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda indoposco.id",
+   "title": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda - indoposco.id",
    "topic": "(CSSR) Artha Graha Peduli - BAGI"
   },
   {
@@ -494,35 +523,6 @@
    "statement": "AGP Gelar Aksi Sosial sebagai Wujud Bakti kepada Ibunda Founder CNN Indonesia",
    "title": "AGP Gelar Aksi Sosial sebagai Wujud Bakti kepada Ibunda Founder - CNN Indonesia",
    "topic": "(CSSR) Artha Graha Peduli - BAGI"
-  },
-  {
-   "brand": "Artha Graha",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-11",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#BankArthaGraha"
-   ],
-   "id": "mdfb325ac86b2",
-   "keywords": [
-    "bank artha graha internasional",
-    "bank artha graha",
-    "artha graha",
-    "yuliana"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNDBJX2tUdk5sN1p1ZnhwWDdPc3FwN25vUE1XbUZORWhUVDBrSE5DclZ4SHgtNXdIWUVHSXpuTDQ1bzZQbWc3UndadzFlRmt6cTNTMmNGdzhBTDNkOWFYa01BZElYV3E2YVNmNFNqSGN6b2hUbG5BbVlGY0N6eXBXNmRBMkJDVjJ4NHJ4eHdXQm5HbFR6aElHS1d0MThWREFwbm9yM0F2Ni1EVk5WSEI1MkxYai16RWpuX3lNY1owYnFzdw?oc=5",
-   "organization": "Bank Artha Graha Internasional",
-   "person": "Tomy Winata",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "republika.co.id",
-   "statement": "Tomy Winata menyoroti Yuliana Winata, Ibu dari Pengusaha Tomy Winata Meninggal Dunia di Usia 99 Tahun - republika.co.id.",
-   "title": "Yuliana Winata, Ibu dari Pengusaha Tomy Winata Meninggal Dunia di Usia 99 Tahun - republika.co.id",
-   "topic": "Bank Artha Graha Internasional"
   },
   {
    "brand": "Artha Graha",
@@ -708,7 +708,7 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "mf3f090500bba",
+   "id": "ma527e78612c7",
    "keywords": [
     "allo bank",
     "bersih",
@@ -716,7 +716,7 @@
     "hingga"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5LOVM5b3BJT0pDX2dBWXVKeGxrR2RVSm1lY0Z4YndaVkc0T0JkSEs0VXRMNnIxN0tfSS1tWG92SVVoYmp4LTN0bjEtTVNxUEp2cFM2Vm1lMEx5RlVrN202Tm1HdmE2Zw?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9UN015U2FCd2ZWOUs0QWtlcXNfcUphWHNQMFFDODRFUV9mT2MwZFFxTXFUX1J3UzI0cmxRTkJnc29QTVRiODBnUDNLb2NYdnRRZVQwdlNSbm9IRjlXaXNHeHYwLV91QQ?oc=5",
    "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
@@ -754,6 +754,35 @@
    "source": "MonitorRiau.com",
    "statement": "SeABank announces Sustainable Finance Framework MonitorRiau.com",
    "title": "SeABank announces Sustainable Finance Framework - MonitorRiau.com",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Bank Saqu",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-29",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankSaqu"
+   ],
+   "id": "m4365694cfa5f",
+   "keywords": [
+    "bank saqu",
+    "bidik",
+    "peluang",
+    "bisnis"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeXZ6X0NzNkRNbkF3eHAxaDVFa3NDbVRkWjR6VlFxLXN5RF9DWXpra0xTcFNCcHByQklCSkh4MlpMWVBSWDN4dmRCams2UzdXMDgzUnI0QTZ3UUxPNVhfNjdrdVh3aDhkVVdwU3UyRGVneGVpYWVyajdSd0lzbFp6NDh5cGN0VnVJNzA4SnpselVSWVRIaEFNSFhoclFGV0hQSVpYUXlDWmFXNnR0aGc5MHNJNWdtUzUtUUpFcEVoN2NMN2FRYWhBMDI5NU1IV3h4aS1ZR09R?oc=5",
+   "organization": "Bank Saqu",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Pasardana",
+   "statement": "Bank Saqu Bidik Peluang Bisnis Solopreneur, Hadirkan Buyer hingga Investor dalam The Founders Club 2026 Pasardana",
+   "title": "Bank Saqu Bidik Peluang Bisnis Solopreneur, Hadirkan Buyer hingga Investor dalam The Founders Club 2026 - Pasardana",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -870,35 +899,6 @@
    "source": "kontan.co.id",
    "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit kontan.co.id",
    "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - kontan.co.id",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-10-22",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
-   "id": "m0e35cf4c7bc1",
-   "keywords": [
-    "allo bank",
-    "bidik",
-    "hingga",
-    "akhir"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBCRE1uZnQ0ZDVuZDNMY09EbHR1Tk1WamFQMzVuSjR4WXExbm1VZVIwaG5EVWVzMnhDMFJOb3QwZjhQc1pnRnJhUVNoZDBZVXZKUXlCdjBiNUZXWHVySG40VVFsSHh0Zw?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "TradingView",
-   "statement": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit TradingView",
-   "title": "Allo Bank (BBHI) Bidik NIM 10%–10,5% hingga Akhir 2026, Ini Strategi Jaga Profit - TradingView",
    "topic": "Bank Artha Graha Internasional"
   }
  ]
