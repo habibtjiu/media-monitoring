@@ -1,36 +1,7 @@
 {
- "generated_at": "2026-11-28T03:41:07.835666+00:00",
- "generated_at_wib": "28 Nov 2026, 10:41 WIB",
+ "generated_at": "2026-11-28T12:20:20.040378+00:00",
+ "generated_at_wib": "28 Nov 2026, 19:20 WIB",
  "items": [
-  {
-   "brand": "Sea Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-27",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#SeaBank"
-   ],
-   "id": "m88f3d5b09c5e",
-   "keywords": [
-    "sea bank",
-    "seabank",
-    "officially",
-    "appoints"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNzdYQnUtNXdyal8xenNydHVya2VOVGpRSndyRTRnTy0ycVlScmNucW5lTl9QanlCbnVDcnBQTU5XZkNwQm1EME5yeHZxUE5RUllBT0tJRnA4VDJhd1drMTZYWlJnbHR2QURKQmlZSnlHQVhRU0ZZd3NTZ211ajMzSksyY1hHalV0aXV1ZFNoYlNUazcxTzVieG9SZXozUVlnRl8zaG9HOHhvVzdJ?oc=5",
-   "organization": "Sea Bank",
-   "person": "Standing Deputy",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "Riau Green.com",
-   "statement": "Standing Deputy menyoroti SeABank officially appoints CEO and Standing Deputy CEO - Riau Green.com.",
-   "title": "SeABank officially appoints CEO and Standing Deputy CEO - Riau Green.com",
-   "topic": "Bank Artha Graha Internasional"
-  },
   {
    "brand": "Sea Bank",
    "channel": "Media Online",
@@ -58,6 +29,35 @@
    "source": "Riau Green.com",
    "statement": "Standing Deputy menyoroti SeABank Tunjuk Le Van Tan sebagai CEO Baru dan Standing Deputy CEO - Riau Green.com.",
    "title": "SeABank Tunjuk Le Van Tan sebagai CEO Baru dan Standing Deputy CEO - Riau Green.com",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-27",
+   "emotion": "Anticipation",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m321ac63fde01",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "program"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQajIyakNjVEN2NDNpZ1dFZHFfclZYWjA1Vk9YTVV0RWFTUHd2UmZtbUg4V2hHTjJrdkloOWUtdzdVLU9BZGNaM1MxRlZ2Uk5QT1Y5VnBhZERGR0g0M0NpSDl2cnpVX25wRi01S3VzNVpOc2tNcG5lOXdORTBvX3lvOXRJclQ3RUlfNTFlVnlqZ2pkN3RXQ052cmpzNG1PQzdPRVBUZy1mbVZyallucld2SDRoSGJsX1hleFhQbU5VdTQteDZNcTRQLWZLVVhwb05wUG12bkhtM2FtelhyemtjcUFfWlc5NFNZR2Y4?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "Kepri Post",
+   "statement": "Program Blue Policing Diluncurkan di Rempang Eco-City, Perkuat Keamanan Laut dan Kesejahteraan Pesisir Kepri Post",
+   "title": "Program Blue Policing Diluncurkan di Rempang Eco-City, Perkuat Keamanan Laut dan Kesejahteraan Pesisir - Kepri Post",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -128,7 +128,7 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "m4b3e73cb5785",
+   "id": "m27cb9eddeb16",
    "keywords": [
     "allo bank",
     "realisasikan",
@@ -136,15 +136,15 @@
     "saham"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LejE0elUta0tYQV8zbkF3YnBfd01NaXFxbDQxbGo2eFpJZkJEbTI5RExsTXJpaV9rUXZfUEZpZ1A3MkRFYzFRNmZmenU4NHlfdE9NcEtnbG93Z3dwTTdaNXJVdEs?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9aRlJtNVgyMENpUkV0dndlRVYzR0E1ejd0cHBiTGJPNjNQMEh5QjhJc3ZuZGplOWdaQ3l6bnZVSThTUm56Q2syX1pTVXRBeGhydHRV?oc=5",
    "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "SuaraGarut.ID",
-   "statement": "Allo Bank Realisasikan Buyback Saham Rp293,17 Miliar SuaraGarut.ID",
-   "title": "Allo Bank Realisasikan Buyback Saham Rp293,17 Miliar - SuaraGarut.ID",
+   "source": "شبكة تواصل الإخبارية",
+   "statement": "Allo Bank Realisasikan Buyback Saham Rp293,17 Miliar شبكة تواصل الإخبارية",
+   "title": "Allo Bank Realisasikan Buyback Saham Rp293,17 Miliar - شبكة تواصل الإخبارية",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -244,64 +244,6 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "mc94c8404de43",
-   "keywords": [
-    "allo bank",
-    "kredit",
-    "dengan",
-    "menjaga"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qdkJQLXdiMXczM1RRZzBqMmVhLTBLNUQ2QXNVZFpoZ3J5Z1hlN1I5czJRX0EzUF9rSHhmZUdjeDJRNlhDRDVSTDZBblE1LTBpcHJMNjljTnNCQQ?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "SuaraGarut.ID",
-   "statement": "Bank Digital Pacu Kredit dengan Menjaga Risiko Bermasalah SuaraGarut.ID",
-   "title": "Bank Digital Pacu Kredit dengan Menjaga Risiko Bermasalah - SuaraGarut.ID",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-26",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
-   "id": "m0226c21825bc",
-   "keywords": [
-    "allo bank",
-    "kredit",
-    "dengan",
-    "kualitas"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGdEVfcXU4RGtjdWdObzFrLVo3U0ViWGVZazU1aHhfQ3ltdXFac2R0eG9JYTEyQVFzYWZXUndJVml6VFkwcjJsRF9CYlgzWDZTZE9mOGQ4S3Fudkdsa05fX25wcXMwejQ?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "MediaKompeten",
-   "statement": "Bank Digital Pacu Kredit dengan Kualitas Aset Terjaga MediaKompeten",
-   "title": "Bank Digital Pacu Kredit dengan Kualitas Aset Terjaga - MediaKompeten",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-26",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
    "id": "m5b9ee862d5e7",
    "keywords": [
     "allo bank",
@@ -319,6 +261,35 @@
    "source": "Demokratis.co.id",
    "statement": "Bank Digital Pacu Kredit Saat Konsumsi Nasional Melambat Demokratis.co.id",
    "title": "Bank Digital Pacu Kredit Saat Konsumsi Nasional Melambat - Demokratis.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-24",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m92367602a998",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "hotel"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNV3FvZlRMQnJVWnJvQ3VnM01Obm81TkVuY1FMbWZ1Z1dwY1BoVmFKa2V1SXhiYm9Pdkg4eEZ6dU1EYTQ0YTVILXJxZFZTMW15cC1QNjdSRjBldkNIQUI1TW1EdUFuR3FweTZXcXBCWHRpZVZPMTVuRUFna1lTSVIyNTJUVW9LTzBWdHhITVVZRWRlVHh0emNjLWZicEt6czZTSTZRMTJObk1iczNTVDZwQjBnV2R4bGtDaHQ5N0hmblluVVczR2UzYzJzekV1c03SAdQBQVVfeXFMUGZWWXVwbU9DSVVMVnhsY29pbHJGaWVJWHZ3QktpekdJRkdNN0VJOXBiTGVrTzBETnJiMTQzd05PTzNNeWxVYlhGeTJIdUFubDY4MVF1Z0R1bFRpU3JkYmFTV1l6bTNIbEUwVEFyT0E3N2pHN2U4ZnpiV1UxbEo1dEpOUlRrNmpRRzhldGJyM3MzQ2xVMmdXU0pSSUhXRHdmel9KZFM5OUg1emlFT0l6dEgxVzNsckxVMXRvcFVCLVhXcHZ0QXNKYTJiT0VpZTZDckJZcEo?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "CNN Indonesia",
+   "statement": "Hotel Borobudur Jakarta Siap Sambut Perayaan Natal dan Tahun Baru 2027 CNN Indonesia",
+   "title": "Hotel Borobudur Jakarta Siap Sambut Perayaan Natal dan Tahun Baru 2027 - CNN Indonesia",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -360,23 +331,52 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "mf2989e093aed",
+   "id": "m1c7aaecf52e7",
    "keywords": [
     "allo bank",
-    "bunga",
-    "deposito",
-    "november"
+    "hadapi",
+    "tantangan",
+    "penuhi"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOa0ZIQnJoMXd5b2paXzJsMFpoMjMwRERQbU9SZWdaNjNpLXBQSm91M1B1LWstbjJReFVEOVp1M3RrOHhMQjlNOHVBcVgzaW9OcHYxandVUmlPb1RrRjIzMkJGUkRxOVdQczFqaWdDenVPM2hVZDFuVFVzV2VJck5OMU1qdVM1X19QdjFxNEZ1V2xuS3FTSENyeHdoXzctNFpPb0pDbk1Ub0tEVTNoZmlxZ2owWQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9EUTgwdV9oTjc0amxxT0syeTk5bVAyMGFPcU50dmI5ekNVeGhORU5ZTEZjdUs2SnZ6ZGJ4VV91Nk5qc19Uczd0a2d4YjFBX2EtaGJqVWxUdW1JMVpPclN5WHh1NA?oc=5",
    "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "kayonews.co.id",
-   "statement": "Bunga Deposito Bank Digital 24 November 2026: Krom Bank Tawarkan 8%, Ini Perbandingan 7 Bank kayonews.co.id",
-   "title": "Bunga Deposito Bank Digital 24 November 2026: Krom Bank Tawarkan 8%, Ini Perbandingan 7 Bank - kayonews.co.id",
+   "source": "Demokratis.co.id",
+   "statement": "Bank Hadapi Tantangan Penuhi Batas Free Float 15 Persen Demokratis.co.id",
+   "title": "Bank Hadapi Tantangan Penuhi Batas Free Float 15 Persen - Demokratis.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-23",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m21d94597e247",
+   "keywords": [
+    "allo bank",
+    "hadapi",
+    "tantangan",
+    "penuhi"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE04Vnp1T3luT0M2bkJaQ2lJMVFZSGZmY2VpZzhYRzRvQXlOVHdXZUpPX3FPbXVZSjhySHRCRWtCQlVKQVhaNlB3SGhmLWJXbE9wTUNtUHNDbFBkT0kxLTR1Q0dQMlc?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Demokratis.co.id",
+   "statement": "Bank Hadapi Tantangan Penuhi Aturan Free Float 15 Persen Demokratis.co.id",
+   "title": "Bank Hadapi Tantangan Penuhi Aturan Free Float 15 Persen - Demokratis.co.id",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -447,35 +447,6 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "m0934b2c0a499",
-   "keywords": [
-    "allo bank",
-    "sesuaikan",
-    "bunga",
-    "deposito"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE83aFVMSGR1OWdRRTV4dE5ZdkZXeUpvYnE3aXczb3pmYTEyLWQta051Y25TbkhSdFFmVDBmaUtnUmkxMzRoRktJak1VV0txQXZHYnFvVXo5bnV3ZmR2RmFZdG55MHg3b2o1d2E1eUpjTHNVZw?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Neutral",
-   "sentimentWeight": 1,
-   "source": "MediaKompeten",
-   "statement": "Allo Bank Sesuaikan Bunga Deposito di Tengah BI Rate 6 Persen MediaKompeten",
-   "title": "Allo Bank Sesuaikan Bunga Deposito di Tengah BI Rate 6 Persen - MediaKompeten",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-22",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
    "id": "m4af1c75c0180",
    "keywords": [
     "allo bank",
@@ -505,7 +476,7 @@
    "hashtags": [
     "#AlloBank"
    ],
-   "id": "mc263ba6b5cca",
+   "id": "mb63b2593b908",
    "keywords": [
     "allo bank",
     "sesuaikan",
@@ -513,15 +484,15 @@
     "deposito"
    ],
    "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0yUHp6MEFKYzNkWU1Ea1BONzMxSVlNdmw3dzF3dHpNZHpocnN5NFVUMnJ2SFdrRUJIX0p5NWpXaVZLY1ViYlFiSkhsY3YxbDNZbmEyY01sRkl3bXdhRUszYmdYNW4?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBsLUw3b2p0Q09OS1A0Y182WE1BbE5NUHZfZnBmLVpnZGRTY0JnTGlPZl90WkdUNm9MTnc3LXdXMkwxbldvVUlvZG9zS20ycWpkZDcw?oc=5",
    "organization": "Allo Bank",
    "person": "",
    "region": "Nasional",
    "sentiment": "Neutral",
    "sentimentWeight": 1,
-   "source": "SuaraGarut.ID",
-   "statement": "Allo Bank Sesuaikan Bunga Deposito Saat BI Rate 6 Persen SuaraGarut.ID",
-   "title": "Allo Bank Sesuaikan Bunga Deposito Saat BI Rate 6 Persen - SuaraGarut.ID",
+   "source": "شبكة تواصل الإخبارية",
+   "statement": "Allo Bank Sesuaikan Bunga Deposito Saat BI Rate 6 Persen شبكة تواصل الإخبارية",
+   "title": "Allo Bank Sesuaikan Bunga Deposito Saat BI Rate 6 Persen - شبكة تواصل الإخبارية",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -558,6 +529,35 @@
    "channel": "Media Online",
    "comparisonWeight": 1,
    "date": "2026-11-13",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "md772b2fd5652",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "wujud"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSGhFanl6TkRCY040bGhPVHpXYzd1U3JzTGdqUUVtNllKSUt5NFdQdlJISjlGTWNhcGhHVVZiMTk2MldTOHNVSTJEZS1Ka01sM3NDSFJqT2Nna3Jkd0lQNnZQM19kXzlwUGhBdzFMV0lUeTJOeTExcG15eUJHc0FjQ2pYdEJkdTEzY05ncjAxVUF6YlV4YThlTms0ODlFejJ1cjVwSldORDNsblVnTU9XLVo2NGdxdFBqbktyM0RueEd3RHVkOERsTA?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "Tomy Winata",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Kompas.com",
+   "statement": "Tomy Winata menyoroti Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com.",
+   "title": "Wujud Bakti kepada Mendiang Ibunda, Tomy Winata Gelar Aksi Sosial melalui Artha Graha Peduli - Kompas.com",
+   "topic": "(CSSR) Artha Graha Peduli - BAGI"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-13",
    "emotion": "Joy",
    "engagement": 0,
    "hashtags": [
@@ -580,35 +580,6 @@
    "source": "Pantura Post",
    "statement": "SNATIPS 2026 FTIK UPS Tegal Sukses Besar! Mahasiswa Tuan Rumah Raih Dua Gelar di INPC - Pantura Post Pantura Post",
    "title": "SNATIPS 2026 FTIK UPS Tegal Sukses Besar! Mahasiswa Tuan Rumah Raih Dua Gelar di INPC - Pantura Post - Pantura Post",
-   "topic": "Bank Artha Graha Internasional"
-  },
-  {
-   "brand": "Allo Bank",
-   "channel": "Media Online",
-   "comparisonWeight": 1,
-   "date": "2026-11-13",
-   "emotion": "Trust",
-   "engagement": 0,
-   "hashtags": [
-    "#AlloBank"
-   ],
-   "id": "m480ddfff452f",
-   "keywords": [
-    "allo bank",
-    "konglomerat",
-    "tertekan",
-    "biaya"
-   ],
-   "language": "Indonesia",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB1Rm5UWEIwRExFbGhVSHdpRzRveTgwUnJnVFYzOUU0RmItNk5ONU4tbmhsWWd0WTh3VG1Mbm5qMmtmQ3hiclhxNGRaYVpjMlFsQ1Y3UjVXNFZWeVZXVU96Q21saHQ0S3laZGUwdHd1aWY?oc=5",
-   "organization": "Allo Bank",
-   "person": "",
-   "region": "Nasional",
-   "sentiment": "Positive",
-   "sentimentWeight": 1,
-   "source": "SuaraGarut.ID",
-   "statement": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 SuaraGarut.ID",
-   "title": "Laba Bank Konglomerat Tertekan Biaya Dana pada 2026 - SuaraGarut.ID",
    "topic": "Bank Artha Graha Internasional"
   },
   {
@@ -638,6 +609,64 @@
    "source": "detikNews",
    "statement": "Tomy Winata menyoroti Wujud Bakti Tomy Winata untuk Ibunda Lewat Baksos Artha Graha Peduli - detikNews.",
    "title": "Wujud Bakti Tomy Winata untuk Ibunda Lewat Baksos Artha Graha Peduli - detikNews",
+   "topic": "(CSSR) Artha Graha Peduli - BAGI"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-12",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m313f26347c93",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "wujud"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0JSMFFoZXp4MmZydURtLU90VVlfRTFvbjNKMlcydkNPY3pDQS1QLTh3SVRYTWJCRG1CcGYxUEJlcGJvSUNOcjFjUmZZTW5iSWNPN3oyTi1sWkxXMXRodEF1aFZXX2JuQnJTeUx0VVhVbjBrZEhKeWRKdGZVWTV2SjFtMmZqTkNObk9uNmlhWGQwNG9L?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "indoposco.id",
+   "statement": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda indoposco.id",
+   "title": "Wujud Bakti Founder Artha Graha Peduli kepada Sang Ibunda - indoposco.id",
+   "topic": "(CSSR) Artha Graha Peduli - BAGI"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-12",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m400c35ee133e",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "founder"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSnJTblAxcHY5bWNGZW4waDFwSFdIbmhmR1BIM0dMY2FmMmZGQURJOE5MT3FOSlloWEpFLV93TUF6MWlLUzBNWDdlMnRXdjV5NlhfaDd0dFNoc04zM3hyQ19nd1NacnJyNzdWMEp0aGVQYi1wUGs2WVEwbWZKRUNCSzJwc3RKcFRPbTM3SkptNWE1MmVGVmM3SDVYRmE4S280T2RoeGVMaGZnY3ROM3EtdlJ5cy1ZZlZmOFVzbDlWcUE4amvSAcgBQVVfeXFMTS1ZSkRPT0J4QzR0bEV6V0FiUmFET0Z1V18xMnctUWhtN2M1Q3puekd2VzB5YV96U0gtOFhHREc0S3oydFM4Yy1aNkluUUNmSXJFaTdpSHNyME5IeHNxZzh6UVBxSFFZNktQVWdoWE9SaXNYa0F5ck41THFzcl9hOHhwaVhGajZrM2l4eHRTbW9QQXZCS29TeVA1Y2tBaFIwdDA3emhXZWt0OFVMOWZBdnBSaTZUMmR6eTVOcm5WSGlfSTlxN0owS3g?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "ANTARA News Megapolitan",
+   "statement": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda ANTARA News Megapolitan",
+   "title": "Founder Artha Graha Peduli gelar bakti sosial kedukaan untuk mendiang ibunda - ANTARA News Megapolitan",
    "topic": "(CSSR) Artha Graha Peduli - BAGI"
   },
   {
@@ -728,6 +757,35 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-10",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m6d373247df5c",
+   "keywords": [
+    "allo bank",
+    "hadapi",
+    "tekanan",
+    "kontan"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBMM0xqQkJJNkNDQUFlLTFpOWlwWEYzY0tOcTRqOXAxOXZYUmJSWThmT3NiM0tZNGpLdml0SzJPRzNJSE54VnA4eVBZY2hOQnVHY2lza2MzMFhxSENQdEFYbFo1ZmFqbGJVd2NqNEZvVUxxWDdFTEQ0?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "KONTAN",
+   "statement": "Bank Digital Hadapi Tekanan Laba KONTAN",
+   "title": "Bank Digital Hadapi Tekanan Laba - KONTAN",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
    "brand": "Artha Graha",
    "channel": "Media Online",
    "comparisonWeight": 1,
@@ -757,6 +815,151 @@
    "topic": "Bank Artha Graha Internasional"
   },
   {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-08",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "mf221d0a410a0",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "yuliana"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZjhYN3BvUWpnQWlmT0NxczU4NHdpQnlvcnVQT1hyMGtaT3JPMjRzUVFEREVCNGRzeVptellPUVVzelNSc2g0MTBGMEFJVDV4bG5FR29WV0VFUHVyZi0xa1pFV1c2d2dJaWF1dkhvbmJMTTYwQUdVeGNZZHM1Rm1nQ1ZnUTFXZ0dRT3doYjQ1MkJ5dEhQckpLUVdXcnBYamI0U01TSjNVU05LRjB0TWphdw?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "Tomy Winata",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Kabar24",
+   "statement": "Tomy Winata menyoroti Yuliana Winata, Ibunda Tomy Winata Meninggal Dunia Sabtu (7/11) - Kabar24.",
+   "title": "Yuliana Winata, Ibunda Tomy Winata Meninggal Dunia Sabtu (7/11) - Kabar24",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-08",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m1af65cb5586e",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "jenazah"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRHpSYjYwblRNazlrX0JhRWJhbzdlVFFtMm5vOHBudGpPdjRLT213eHlVM1E1U2RRRFd2Tndzbmp5NzJMellzNjBBYnFWWDdob2FkR2pKdEx5U2hYRkl5bElKZzdzZHV1TUJ2VmthVlB6OW92Y0tpZHFselZwWnlnOVJxUVU1R3QteDZxb0RVSHBoVGs1dkllYVhpbTlNQjVnbFh6QzZPZHBqTTB3S2pIZUd5aDBjMXF3Z0ZpS0R2ZjMxRW13RGc?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "Tomy Winata",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Kabar24",
+   "statement": "Tomy Winata menyoroti Jenazah Yuliana Winata Ibunda Tomy Winata akan Dimakamkan Jumat 13 November - Kabar24.",
+   "title": "Jenazah Yuliana Winata Ibunda Tomy Winata akan Dimakamkan Jumat 13 November - Kabar24",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-08",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m2322be986f85",
+   "keywords": [
+    "allo bank",
+    "bisnis",
+    "paylater",
+    "perbankan"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMXlmaENVcHI4SG9Id0pubVJYVG5LbF94LWg3T2VMWEZySGtqTldPR0FSRTVJWjZwLW4yZGxDdmpDTk9hN042bFQyQmxsOFoybGhJemdUN0stR0VnNFR5aGNjZjJRNTlOSU9nLWxDOGFmUnQzek9VS3BTT1hrYzl3amp4bEpYZ1NORG4xN01mekRoTzk0RHdMZXRoVlhFSDgzTElqStIBngFBVV95cUxObVRKS0hld2J2V0V4c013WTctaHl2aGdHZ0I0c1VmaXZhczlxUzdUUHNsb1RreFVzcHphSWlZaTRfTURubGVVODQ3UGR2bUI1cmxrblBBWU9xR1JEbnJ0MC1BSjZuNzg3RG9vOHpWMEg2UTN0UG9aQm91VHExaEJ1S3BZUERMVjA0TEw0U2Zkcng3QXlSTF9IM3A5VHFtdw?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "kontan.co.id",
+   "statement": "Bisnis Paylater Perbankan Tumbuh 26,68%, Ini Kinerja Allo Bank dan BCA kontan.co.id",
+   "title": "Bisnis Paylater Perbankan Tumbuh 26,68%, Ini Kinerja Allo Bank dan BCA - kontan.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-06",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "mc1ea15d2246b",
+   "keywords": [
+    "allo bank",
+    "tingkatkan",
+    "paylater",
+    "kredit"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfVEFrd0JsWE05M1VJZGpfMTNPM3J1YkxnUElidGdxeXRabmJrbkZybzdLUHFScjZ2SnhGTTA2RmxrR0lSUmk0X3d5elkteHBMQmlPUy1TdXpWX2IxelBqeFBZMDRMTExuX2c?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "Demokratis.co.id",
+   "statement": "Allo Bank Tingkatkan Paylater saat Kredit BCA Menyusut Demokratis.co.id",
+   "title": "Allo Bank Tingkatkan Paylater saat Kredit BCA Menyusut - Demokratis.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-11-05",
+   "emotion": "Trust",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m47ad6882b8c7",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "penggusuran"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNUnVRb3RrR3dGd1FRTmJyMzBhT1pINXRBdXMwWW83cGZqb2Q5NWcxLWxPU2lvWWh0OHpnVjlDWGFQUVFsS0pDY2VIci1JTnpMbHhUVm9UN3R6MlZqM0hCMzBHa2I2c0Ryd3NyYlBRUU81bU1UNElkdzNhOTNleWN1X3MxN3I4bVk3NGgweHZ6Nlp3TmdoM2p4N01OcTNnX2ZvRDBBUm04bzREakhicFNpakZxc3NqZ1VQRkF4VXc2Q2NIbzZjVEFTbXdoTUg3eTNHcVNqRHRpVmpqcEd5X01sdGFSc0UtQmdYZ194bHVQRjlON25TdGc1WHpwUVBWdTRBOGlnNG8za01JSFlqaUsxVWxQR1MzRDl6amYzY2pxeXVPTzRhUDVNTTc1UlAxal9YdkE?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Neutral",
+   "sentimentWeight": 1,
+   "source": "WALHI",
+   "statement": "Penggusuran Brutal oleh PT Marketindo Selaras Group Artha Graha (Milik Tomi Winata), Rumah Petani Dibakar, Warga Diintimidasi, Diduga Tanpa HGU dan Dibekingi Aparat WALHI",
+   "title": "Penggusuran Brutal oleh PT Marketindo Selaras Group Artha Graha (Milik Tomi Winata), Rumah Petani Dibakar, Warga Diintimidasi, Diduga Tanpa HGU dan Dibekingi Aparat - WALHI",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
    "brand": "Sea Bank",
    "channel": "Media Online",
    "comparisonWeight": 1,
@@ -783,6 +986,93 @@
    "source": "CNBC Indonesia",
    "statement": "Fundamental Bisnis Kuat, SeaBank Konsisten Jaga Pertumbuhan Positif CNBC Indonesia",
    "title": "Fundamental Bisnis Kuat, SeaBank Konsisten Jaga Pertumbuhan Positif - CNBC Indonesia",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Artha Graha",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-30",
+   "emotion": "Joy",
+   "engagement": 0,
+   "hashtags": [
+    "#BankArthaGraha"
+   ],
+   "id": "m367248c15812",
+   "keywords": [
+    "bank artha graha internasional",
+    "bank artha graha",
+    "artha graha",
+    "pecahkan"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOak1GeHZxRHgwSW9aUGJtX1dQeEY4c3hxdlFhUjRwaDlmd3hnY3VNVlNLc3BxMFl6bkdUQW5raGxDMlpQcXJ2QXdQVXdvdXIwSGVhbDJXSUhUVDM4WTJVU01PSlBvLU43aXhGZzNZdU0wXzk0TG85MHVzRGlLUFVrM3lOWXNDcWJiV0pSOEgzODZweEx2cmxBYjNTQzNrd2hUMDVCN0ZpdkVaemZIUHdoYw?oc=5",
+   "organization": "Bank Artha Graha Internasional",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Positive",
+   "sentimentWeight": 1,
+   "source": "Fajar Bali",
+   "statement": "Pecahkan Rekor Dunia, Tiga Atlet Bali Dapat Apresiasi dari Discovery dan Bank Artha Graha Fajar Bali",
+   "title": "Pecahkan Rekor Dunia, Tiga Atlet Bali Dapat Apresiasi dari Discovery dan Bank Artha Graha - Fajar Bali",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-30",
+   "emotion": "Sadness",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "m40a46a38f45e",
+   "keywords": [
+    "allo bank",
+    "bersih",
+    "turun",
+    "hingga"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPV2xpN0ZYZkl6a3hiWXZXRmUwT1Y4RGZzSlBWdFJkU3BNYUw0bnJlenR6X19pcG1Lb1E4R2hEVGpoNnpJQjYwR0NaN0xXNmNSajdWMGpoUERsU2F5UkNVbGF2X1dGazVLQmZUVU11ZGdzVFhSbnJidUtPN0dYLWlod0ZfdDVaeVF1WFh4Q0dYUHbSAYoBQVVfeXFMTWNvUDgxdDdkaVZrZWVFZjlIRHg3ZmM3NzNZenBSN1RLc2V6M09LS2NQQ2xOX09jdl9STjZpcWRBaVFVbVBNU3E4OHNMd212NjB1X3dkcjJrRDdrM05BVlVNVjI4eTdLdzBfWmhQVWpsOHZwZVYweVlza09NSmxMX0hBZl9XNEZqMUtR?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Negative",
+   "sentimentWeight": 1,
+   "source": "kontan.co.id",
+   "statement": "Laba Bersih Allo Bank Turun 11% hingga September 2026 kontan.co.id",
+   "title": "Laba Bersih Allo Bank Turun 11% hingga September 2026 - kontan.co.id",
+   "topic": "Bank Artha Graha Internasional"
+  },
+  {
+   "brand": "Allo Bank",
+   "channel": "Media Online",
+   "comparisonWeight": 1,
+   "date": "2026-10-30",
+   "emotion": "Sadness",
+   "engagement": 0,
+   "hashtags": [
+    "#AlloBank"
+   ],
+   "id": "ma527e78612c7",
+   "keywords": [
+    "allo bank",
+    "bersih",
+    "turun",
+    "hingga"
+   ],
+   "language": "Indonesia",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9UN015U2FCd2ZWOUs0QWtlcXNfcUphWHNQMFFDODRFUV9mT2MwZFFxTXFUX1J3UzI0cmxRTkJnc29QTVRiODBnUDNLb2NYdnRRZVQwdlNSbm9IRjlXaXNHeHYwLV91QQ?oc=5",
+   "organization": "Allo Bank",
+   "person": "",
+   "region": "Nasional",
+   "sentiment": "Negative",
+   "sentimentWeight": 1,
+   "source": "TradingView",
+   "statement": "Laba Bersih Allo Bank Turun 11% hingga September 2026 TradingView",
+   "title": "Laba Bersih Allo Bank Turun 11% hingga September 2026 - TradingView",
    "topic": "Bank Artha Graha Internasional"
   },
   {
